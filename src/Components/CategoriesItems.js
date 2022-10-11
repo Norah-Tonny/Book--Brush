@@ -5,7 +5,11 @@ const CategoryContainer = styled.div``
 
 const CategoriesItems = () => {
     return (
-        <CategoryContainer></CategoryContainer>
+        <CategoryContainer>
+
+
+            
+        </CategoryContainer>
 
     )
 }
