@@ -8,7 +8,7 @@ const Login = () => {
     return (
         <LoginContainer>
             <LoginItems />
-            
+
         </LoginContainer>
     )
 }

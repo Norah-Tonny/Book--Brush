@@ -1,4 +1,4 @@
-import HomeItems from "../Components/HomeItems"
+import HomeItems from "../Components/HomeItems";
 import styled from "styled-components"
 
 

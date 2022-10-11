@@ -1,7 +1,15 @@
-import ResultsItems from "../Components/ResultsItems"
+
+import styled from "styled-components";
+
+
+const ResultContainer = styled.div``
 
 const Results = () => {
     return (
-        <ResultsItems/>
+        <ResultContainer>
+
+            
+        </ResultContainer>
     )
 }
+export default Results;
