@@ -2,11 +2,12 @@ import styled from "styled-components"
 const FooterContainer = styled.div``
 const FooterUl = styled.ul``
 const FooterList = styled.li``
+const FooterHeading=styled.h1``
 
 const Footer = () => {
     return (
         <FooterContainer>
-
+This is a footer
     <FooterContainer>
       <FooterUl>
         <FooterHeading>
@@ -28,7 +29,7 @@ const Footer = () => {
         <FooterList>Box Set Creator</FooterList>
      
       </FooterUl>
-      <Footer>
+      <FooterUl>
 
       <FooterHeading>
         Location
@@ -37,18 +38,13 @@ const Footer = () => {
         <FooterList>Nakuru </FooterList>
         <FooterList>Thika</FooterList>
         <FooterList>Kirinyaga</FooterList>
-      </Footer>
+      </FooterUl>
       <FooterUl>
       <FooterList>Contact us through 0721346578/0798674532</FooterList>
       </FooterUl>
     </FooterContainer>
   
         </FooterContainer>
-
-
-
-
-
     )
 }
 export default Footer; 

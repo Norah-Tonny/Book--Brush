@@ -7,7 +7,6 @@ const HomeContainer=styled.div``
 const Home = () => {
     return (
       <HomeContainer>
-        <HomeItems />
         </HomeContainer>
     )
 }
