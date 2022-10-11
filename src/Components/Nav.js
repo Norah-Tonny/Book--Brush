@@ -9,8 +9,7 @@ const Nav = () => {
     return (
         <NavContainer>
             <NavUl>
-                <NavList>
-                </NavList> 
+                <NavList> </NavList> 
             </NavUl>
        </NavContainer> 
      )
