@@ -4,7 +4,7 @@ import styled from "styled-components"
 const FooterContainer = styled.div`
 display:flex;
 justify-content:space-between;
-background:magenta;
+background:#A27B5C;
 `
 const FooterUl = styled.ul`
 padding:2em;
@@ -12,9 +12,11 @@ jusify_content:space-around;
 `
 const FooterList = styled.li`
 list-style-type:none;
+color:#2C3639;
 
 `
-const FooterHeading=styled.h1``
+const FooterHeading = styled.h1`
+color:#2C3639;`
 
 
 
@@ -28,7 +30,7 @@ const Footer = () => {
         </FooterHeading>
         <FooterList>Home</FooterList>
         <FooterList>Login</FooterList>
-        <FooterList>Results</FooterList>
+        <FooterList>Preview</FooterList>
       </FooterUl>
 
       <FooterUl>

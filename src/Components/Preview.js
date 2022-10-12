@@ -1,33 +1,32 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 const OutterContainer = styled.div`
-width:80%;
-margin:0 auto;
-`
+  width: 80%;
+  margin: 0 auto;
+`;
 const ResultContainer = styled.div`
-display:flex;
-justify-content:center center;
-gap:2em;
-`
+  display: flex;
+  justify-content: center center;
+  gap: 2em;
+`;
 const BookPreview = styled.h1`
-text-align:center;
-font-size:2rem; 
-`
-const PrevLeft = styled.div``
-const PrevRight = styled.div``
+  text-align: center;
+  font-size: 2rem;
+`;
+
+const PrevLeft = styled.div``;
+const PrevRight = styled.div``;
 const SelectItems = styled.select`
-padding:1em 4em;
-border-radius:6px;
-background:white;  
-
- 
-`
-const OptionsItems = styled.option`
-
-`
-const Heading = styled.h3`width:300px;`
+  padding: 1em 4em;
+  border-radius: 6px;
+  background: white;
+`;
+const OptionsItems = styled.option``;
+const Heading = styled.h3`
+  width: 300px;
+`;
 const Container = styled.div`
+<<<<<<< HEAD
  display:flex;
 gap:2em;
 
