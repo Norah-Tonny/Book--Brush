@@ -1,4 +1,6 @@
+
 import Login from "../Pages/Login";
+
 import styled from "styled-components";
 const LoginContainer = styled.div`
 margin:10em;
@@ -8,6 +10,9 @@ border-radius:5px;
 
 `;
 const LoginHeading = styled.h3``;
+
+const LoginContainer = styled.div``
+
 
 
 const LoginInput = styled.input`
@@ -27,6 +32,7 @@ const LoginCheck=styled.div``;
 const LoginItems = () => {
   return (
     <LoginContainer>
+
       <LoginParagraph>Username or Email</LoginParagraph>
       <LoginCheck>
 
@@ -53,5 +59,10 @@ const LoginItems = () => {
     </LoginContainer>
   );
 };
+
+
+    </LoginContainer>
+  )
+}
 
 export default LoginItems;

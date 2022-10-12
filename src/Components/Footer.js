@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+
 const FooterContainer = styled.div`
 display:flex;
 justify-content:space-between;
@@ -14,6 +15,11 @@ list-style-type:none;
 
 `
 const FooterHeading=styled.h1``
+
+
+const FooterContainer = styled.div``
+const FooterUl = styled.ul``
+const FooterList = styled.li``
 
 const Footer = () => {
     return (
