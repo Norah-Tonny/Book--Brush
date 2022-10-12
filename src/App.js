@@ -1,18 +1,27 @@
-import Home from "./Pages/Home";
-import Login from "./pages/Login"
+
+// import Home from "./Pages/Home";
+// // import Login from "./pages/Login";
+// import  Category from "./Pages/Category";
+// import Results from "./Components/Results"
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Category } from "@mui/icons-material";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import Results from "./Components/Results";
+
 
 const App = () => {
   return (
+    
     <BrowserRouter>
       <Routes>
-        <Route path="/" elements={<Home />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/Category" element={<Category />}></Route>
-        <Route path="/Results" element={<Results/>}></Route>
+        <Route path="/h" element={<Home />}></Route>
+        <Route path="/login" element={<Login />}></Route>  
+        <Route path="/" element={<Results />}></Route>
 
-      </Routes></BrowserRouter>
+      </Routes>
+      </BrowserRouter>
   )
 }
 export default App;
