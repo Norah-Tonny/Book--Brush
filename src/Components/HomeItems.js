@@ -5,11 +5,7 @@ const HomeContainer = styled.div``
 const Heading = styled.h1``
 
 
-const Home = () => {
-    return (
-      <HomeContainer>
-        </HomeContainer>
-    )
+
 
 const HomeItems = () => {
   return (

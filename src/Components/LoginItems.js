@@ -11,7 +11,6 @@ border-radius:5px;
 `;
 const LoginHeading = styled.h3``;
 
-const LoginContainer = styled.div``
 
 
 
@@ -56,11 +55,6 @@ const LoginItems = () => {
       <input type="checkbox" />
         Forgot Pasword
         </LoginParagraph>
-    </LoginContainer>
-  );
-};
-
-
     </LoginContainer>
   )
 }
