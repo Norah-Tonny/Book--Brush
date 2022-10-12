@@ -7,7 +7,9 @@ import { Categories } from "../data";
 const CategoryContainer = styled.div``
 const CategoriesTitle=styled.h4``
 const BookContainer = styled.div``
-const BookImg = styled.img``
+const BookImg = styled.img`
+width:20%;
+`
 const Content=styled.div``
 
 const CategoriesItems = () => {
@@ -20,9 +22,9 @@ const CategoriesItems = () => {
                         <BookContainer key={index}>
                             <CategoriesTitle>{Category.name}</CategoriesTitle>
                             
-                            <BookImg>
-                            <Content>{Category.img}</Content>
-                            </BookImg>
+                            <BookImg src={Category.img} alt="img" />
+                            
+                            
 
                         </BookContainer>
 
