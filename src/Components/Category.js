@@ -1,4 +1,4 @@
-import CategoriesItems from "../Components/CategoriesItems";
+import CategoriesItems from "./CategoriesItems";
 import styled from "styled-components"
 
 const CategoryContainer=styled.div``
