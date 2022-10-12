@@ -1,6 +1,7 @@
 import HomeItems from "../Components/HomeItems"
 import styled from "styled-components"
 import Footer from "../Components/Footer"
+import Login from "./Login"
 
 
 const HomeContainer=styled.div``
@@ -8,8 +9,8 @@ const HomeContainer=styled.div``
 const Home = () => {
     return (
       <HomeContainer>
-        
-        <Footer/>
+        <Login/>
+        {/* <Footer/> */}
         </HomeContainer>
     )
 }

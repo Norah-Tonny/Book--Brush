@@ -8,10 +8,9 @@ body {
   
 }
 
-h1 {
-  color: green;
+body{
+  background: purple;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

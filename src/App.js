@@ -2,7 +2,6 @@ import Home from "./Pages/Home";
 // import Login from "./pages/Login";
 import  Category from "./Pages/Category";
 import Results from "./Components/Results"
-import Hello from "./Pages/Hello"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 

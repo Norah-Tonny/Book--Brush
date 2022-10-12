@@ -1,13 +1,22 @@
 import styled from "styled-components"
-const FooterContainer = styled.div``
-const FooterUl = styled.ul``
-const FooterList = styled.li``
+
+const FooterContainer = styled.div`
+display:flex;
+justify-content:space-between;
+background:magenta;
+`
+const FooterUl = styled.ul`
+padding:2em;
+jusify_content:space-around;  
+`
+const FooterList = styled.li`
+list-style-type:none;
+
+`
 const FooterHeading=styled.h1``
 
 const Footer = () => {
     return (
-        <FooterContainer>
-This is a footer
     <FooterContainer>
       <FooterUl>
         <FooterHeading>
@@ -39,12 +48,17 @@ This is a footer
         <FooterList>Thika</FooterList>
         <FooterList>Kirinyaga</FooterList>
       </FooterUl>
+     
       <FooterUl>
-      <FooterList>Contact us through 0721346578/0798674532</FooterList>
+      <FooterHeading>
+      Contact us through 
+      </FooterHeading>
+      <FooterList>0721346578</FooterList>
+        <FooterList>0798674532</FooterList>
       </FooterUl>
+      
     </FooterContainer>
   
-        </FooterContainer>
     )
 }
 export default Footer; 
