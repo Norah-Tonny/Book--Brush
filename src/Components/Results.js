@@ -6,17 +6,12 @@ const ResultContainer = styled.div`
 display:flex;
 
 `
-const BookPreview = styled.h1``
+const BookPreview=styled.h1``
 const PrevLeft = styled.div``
 const PrevRight = styled.div``
-const SelectItems = styled.select`
-padding:1em 4em;
-border-radius:6px;
-background:white;   
-`
+const SelectItems = styled.select``
 const OptionsItems = styled.option``
 const Heading = styled.h3``
-const Container=styled.div`display:`
 const Results = () => {
     return (
         <>
@@ -26,63 +21,66 @@ const Results = () => {
 
         <ResultContainer>
 
-            <BookPreview>Book Preview.</BookPreview>
+<BookPreview>Book Preview.</BookPreview>
             <PrevLeft>
-                <Container>
+                <SelectItems>
                     <Heading>Booksize</Heading>
-                    <SelectItems>
-                        <OptionsItems>1200 X 628</OptionsItems>
-                        <OptionsItems>1080 x 1080</OptionsItems>
-                        <OptionsItems>1200 x 628</OptionsItems>
-                        <OptionsItems>828 x 315</OptionsItems>
-                    </SelectItems>
-                </Container>
-
-                <Container>
+                    <OptionsItems>1200 X 628</OptionsItems>
+                    <OptionsItems>1080 x 1080</OptionsItems>
+                    <OptionsItems>1200 x 628</OptionsItems>
+                    <OptionsItems>828 x 315</OptionsItems>
+                </SelectItems>
+            
+            
+                <SelectItems>
                     <Heading>BookCover</Heading>
-                    <SelectItems>
-                        <OptionsItems></OptionsItems>
-                        <OptionsItems></OptionsItems>
-                        <OptionsItems></OptionsItems>
-                        <OptionsItems></OptionsItems>
-                    </SelectItems>
-                </Container>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                </SelectItems>
 
-                <Container>
+
+                <SelectItems>
                     <Heading>Bookcolor</Heading>
-                    <SelectItems>
-                        <OptionsItems>red</OptionsItems>
-                        <OptionsItems>blue</OptionsItems>
-                        <OptionsItems>green</OptionsItems>
-                        <OptionsItems>yellow</OptionsItems>
-                    </SelectItems>
-                </Container>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                </SelectItems>
 
-                <Container>
+
+                <SelectItems>
                     <Heading>BookTittle</Heading>
-                    <SelectItems>
-                        <OptionsItems></OptionsItems>
-                        <OptionsItems></OptionsItems>
-                        <OptionsItems></OptionsItems>
-                        <OptionsItems></OptionsItems>
-                    </SelectItems>
-                </Container>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                </SelectItems>
 
-                <Container>
+
+                <SelectItems>
                     <Heading>Books</Heading>
-                    <SelectItems>
-                        <OptionsItems></OptionsItems>
-                        <OptionsItems></OptionsItems>
-                        <OptionsItems></OptionsItems>
-                        <OptionsItems></OptionsItems>
-                    </SelectItems>
-                </Container>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                </SelectItems>
 
 
+                <SelectItems>
+                    <Heading>Booksize</Heading>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                    <OptionsItems></OptionsItems>
+                </SelectItems>
 
-            </PrevLeft >
+
+          
+            </PrevLeft>
             <PrevRight><p>Where the display will appear</p></PrevRight>
-        </ResultContainer >
+        </ResultContainer>
     )
 }
 export default Results;
