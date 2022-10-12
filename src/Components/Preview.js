@@ -47,6 +47,7 @@ font-size:1rem;
 
 
 `
+const InnerRightContainer = styled.div``
 
 const Preview = () => {
     const [choice, setChoice] = useState({
@@ -60,8 +61,10 @@ const Preview = () => {
 
 
     const SetHandler = () => {
-    
-}
+
+        console.log(choice)
+
+    }
 
 
 
@@ -157,10 +160,20 @@ const Preview = () => {
                         </InnerContainers>
                     </Container>
 
-                    <Button>Set Cover</Button>
+                    <Button onClick={SetHandler}>Set Cover</Button>
 
                 </PrevLeft >
-                <PrevRight><p>Where the display will appear</p></PrevRight>
+                <PrevRight>
+                    <InnerRightContainer>
+
+                        <p>{choice.booksize}</p>
+                        <p>{choice.bookfont}</p>
+                        <p>{choice.bookcolor}</p>
+                        <p>{choice.booktitle}</p>
+                        <p>{choice.BookPreview}</p>
+
+                    </InnerRightContainer>
+                </PrevRight>
             </ResultContainer >
         </OutterContainer>
     )
