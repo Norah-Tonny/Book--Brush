@@ -8,10 +8,10 @@ const App = () => {
     
     <BrowserRouter>
       <Routes>
-        <Route path="/hdhd" element={<Home />}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
   
-        <Route path="/" element={<Results />}></Route>
+        <Route path="/Results" element={<Results />}></Route>
 
       </Routes></BrowserRouter>
   )
