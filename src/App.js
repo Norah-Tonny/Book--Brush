@@ -8,7 +8,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
-import Results from "./Components/Results";
+import Preview from "./Components/Preview";
 
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/h" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>  
-        <Route path="/" element={<Results />}></Route>
+        <Route path="/" element={<Preview />}></Route>
 
       </Routes>
       </BrowserRouter>
