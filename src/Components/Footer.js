@@ -1,14 +1,28 @@
 import styled from "styled-components"
 
 
+const FooterContainer = styled.div`
+display:flex;
+justify-content:space-between;
+background:magenta;
+`
+const FooterUl = styled.ul`
+padding:2em;
+jusify_content:space-around;  
+`
+const FooterList = styled.li`
+list-style-type:none;
+
+`
+const FooterHeading=styled.h1``
+
+
 const FooterContainer = styled.div``
 const FooterUl = styled.ul``
 const FooterList = styled.li``
 
 const Footer = () => {
     return (
-        <FooterContainer>
-
     <FooterContainer>
       <FooterUl>
         <FooterHeading>
@@ -30,7 +44,7 @@ const Footer = () => {
         <FooterList>Box Set Creator</FooterList>
      
       </FooterUl>
-      <Footer>
+      <FooterUl>
 
       <FooterHeading>
         Location
@@ -39,18 +53,18 @@ const Footer = () => {
         <FooterList>Nakuru </FooterList>
         <FooterList>Thika</FooterList>
         <FooterList>Kirinyaga</FooterList>
-      </Footer>
-      <FooterUl>
-      <FooterList>Contact us through 0721346578/0798674532</FooterList>
       </FooterUl>
+     
+      <FooterUl>
+      <FooterHeading>
+      Contact us through 
+      </FooterHeading>
+      <FooterList>0721346578</FooterList>
+        <FooterList>0798674532</FooterList>
+      </FooterUl>
+      
     </FooterContainer>
   
-        </FooterContainer>
-
-
-
-
-
     )
 }
 export default Footer; 

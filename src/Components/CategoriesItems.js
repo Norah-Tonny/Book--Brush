@@ -15,6 +15,7 @@ const Content=styled.div``
 const CategoriesItems = () => {
     return (
         <CategoryContainer>
+
             {
                 Categories.map((Category, index) => {
                     return (
