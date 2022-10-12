@@ -2,6 +2,8 @@
 import styled from "styled-components"
 
 const HomeContainer = styled.div`
+background:purple;
+
 background:#2C3639;
 height:30vh;
 padding:2em;
