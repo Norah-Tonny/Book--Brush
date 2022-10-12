@@ -1,14 +1,9 @@
 
-// import Home from "./Pages/Home";
-// // import Login from "./pages/Login";
-// import  Category from "./Pages/Category";
-// import Results from "./Components/Results"
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
-import Results from "./Components/Results";
+import Preview from "./Pages/Preview";
 
 
 const App = () => {
@@ -16,9 +11,9 @@ const App = () => {
     
     <BrowserRouter>
       <Routes>
-        <Route path="/h" element={<Home />}></Route>
-        <Route path="/login" element={<Login />}></Route>  
-        <Route path="/" element={<Results />}></Route>
+        <Route path="/" element={<Home />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/preview" element={<Preview/>}/>
 
       </Routes>
       </BrowserRouter>
