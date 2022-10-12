@@ -1,15 +1,10 @@
 
 import Home from "./Pages/Home";
-// import Login from "./pages/Login";
 import  Category from "./Pages/Category";
 import Results from "./Components/Results"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
 import Login from "./Pages/Login";
-import Results from "./Components/Results";
-
+import Register from "./Components/Register";
 
 const App = () => {
   return (
@@ -25,7 +20,8 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
   
-        <Route path="/Results" element={<Results />}></Route>
+        <Route path="/results" element={<Results />}></Route>
+        <Route path="/register" element={<Register />}></Route>
 
       </Routes>
       </BrowserRouter>

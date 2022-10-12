@@ -8,18 +8,17 @@ background:magenta;
 `
 const FooterUl = styled.ul`
 padding:2em;
-jusify_content:space-around;  
+jusify_content:space-around; 
+// color:white; 
 `
 const FooterList = styled.li`
 list-style-type:none;
-
+color:white;
+font-size:1em;
 `
 const FooterHeading=styled.h1``
 
 
-const FooterContainer = styled.div``
-const FooterUl = styled.ul``
-const FooterList = styled.li``
 
 const Footer = () => {
     return (

@@ -1,19 +1,14 @@
 
 import Login from "../Pages/Login";
-
 import styled from "styled-components";
 const LoginContainer = styled.div`
-margin:10em;
+
+padding:2em;
 justify-content:space-around;
 text-align:center;
 border-radius:5px;
-
 `;
 const LoginHeading = styled.h3``;
-
-const LoginContainer = styled.div``
-
-
 
 const LoginInput = styled.input`
 padding:2em;
@@ -22,7 +17,6 @@ border-radius:5px;
 `;
 const LoginParagraph = styled.p`
 font-size:1.5em;
-color:white;
 `;
 
 const LoginParagraphCheck=styled.p`
@@ -36,10 +30,10 @@ const LoginItems = () => {
       <LoginParagraph>Username or Email</LoginParagraph>
       <LoginCheck>
 
-      <LoginInput type="text" placeholder="password"/>
+      <LoginInput type="text" placeholder="Email"/>
       </LoginCheck>
 
-      <LoginParagraph>Pasword</LoginParagraph>
+      <LoginParagraph>Password</LoginParagraph>
       <LoginCheck>
       <LoginInput type="text" placeholder="password"/>
       </LoginCheck>
@@ -59,10 +53,5 @@ const LoginItems = () => {
     </LoginContainer>
   );
 };
-
-
-    </LoginContainer>
-  )
-}
 
 export default LoginItems;

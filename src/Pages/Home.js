@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import Footer from "../Components/Footer"
 import Login from "./Login"
-
+import Register from "../Components/Register";
 import CategoriesItems from "../Components/CategoriesItems";
 
 
@@ -13,17 +13,12 @@ const Home = () => {
 
     return (
       <HomeContainer>
-        <Login/>
-        {/* <Footer/> */}
+      {/* <HomeItems /> */}
+      {/* <CategoriesItems /> */}
+<Register/>
+        {/* <Login/> */}
+        <Footer/>
         </HomeContainer>
     )
-
-  return (
-    
-    <HomeContainer>
-      <HomeItems />
-      <CategoriesItems />
-    </HomeContainer>
-  )
 }
 export default Home;
