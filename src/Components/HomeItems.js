@@ -3,7 +3,9 @@ import styled from "styled-components"
 
 const HomeContainer = styled.div`
 background:purple;
-height:20vh;`
+height:30vh;
+padding:2em;
+`
 const HomeHeading = styled.h1`
 text-align:center;
 font-size:3rem;
