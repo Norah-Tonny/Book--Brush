@@ -5,6 +5,7 @@ import Results from "./Components/Results"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import Register from "./Components/Register";
+import React from "react";
 
 const App = () => {
   return (
