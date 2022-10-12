@@ -19,9 +19,7 @@ const Heading = styled.h3``
 const Container=styled.div`display:`
 const Results = () => {
     return (
-        <>
-        
-        </>
+      
      
 
         <ResultContainer>
