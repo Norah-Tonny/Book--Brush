@@ -2,6 +2,11 @@
 import styled from "styled-components"
 
 const HomeContainer = styled.div`
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 0daa751abfccea0bd6e0580e621a90ab1d1b907b
 background:#2C3639;
 height:30vh;
 padding:2em;

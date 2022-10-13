@@ -1,8 +1,8 @@
-
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import Preview from "./Components/Preview";
+import Register from "./Components/Register";
 import Preview from "./Pages/Preview";
 
 
@@ -19,6 +19,7 @@ const App = () => {
 
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/Register" element={<Register/>}/>
         <Route path="/preview" element={<Preview/>}/>
 
       </Routes>
