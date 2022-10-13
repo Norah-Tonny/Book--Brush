@@ -9,7 +9,7 @@ width:80%;
 border:2px solid grey;
 box-shadow:1px 1px 3px lightGrey;
 margin:0 auto;
-padding:2em;
+padding:4em;
 `
 const ResultContainer = styled.div`
 display:flex;
