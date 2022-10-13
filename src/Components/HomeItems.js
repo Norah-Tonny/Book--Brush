@@ -1,13 +1,29 @@
 
 import styled from "styled-components"
 
-const HomeContainer = styled.div``
-const Heading = styled.h1``
+const HomeContainer = styled.div`
+
+
+background:#2C3639;
+height:30vh;
+padding:2em;
+`
+const HomeHeading = styled.h1`
+text-align:center;
+font-size:3rem;
+font-weight:bold;
+color:#A27B5C;`
+
+const HomeCover=styled.div``
+
+
 
 const HomeItems = () => {
   return (
     <HomeContainer>
-      <Heading>This is a home page</Heading>
+      <HomeHeading>THE EASIEST WAY TO CREATE<br/> PROFESSIONAL ADS & SOCIAL MEDIA<br/> IMAGES FOR YOUR BOOKS
+      </HomeHeading>
+    
     </HomeContainer>
   )
 

@@ -10,6 +10,9 @@ border-radius:5px;
 `;
 const LoginHeading = styled.h3``;
 
+
+
+
 const LoginInput = styled.input`
 padding:2em;
 width:30%;
@@ -52,7 +55,7 @@ const LoginItems = () => {
         Forgot Pasword
         </LoginParagraph>
     </LoginContainer>
-  );
-};
+  )
+}
 
 export default LoginItems;

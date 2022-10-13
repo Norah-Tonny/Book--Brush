@@ -1,23 +1,33 @@
 import styled from "styled-components"
-
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import SubscriptionsRoundedIcon from '@mui/icons-material/SubscriptionsRounded';
 
 const FooterContainer = styled.div`
 display:flex;
 justify-content:space-between;
-background:magenta;
+background:#A27B5C;
+padding:2em;
 `
 const FooterUl = styled.ul`
-padding:2em;
+
 jusify_content:space-around; 
 // color:white; 
 `
 const FooterList = styled.li`
 list-style-type:none;
-color:white;
-font-size:1em;
-`
-const FooterHeading=styled.h1``
+color:#2C3639;
 
+`
+const FooterHeading = styled.h1`
+color:#2C3639;`
+
+const MaterianUl=styled.div`
+display:flex;
+flex-direction:column;
+gap:3em;
+
+`
 
 
 const Footer = () => {
@@ -29,7 +39,7 @@ const Footer = () => {
         </FooterHeading>
         <FooterList>Home</FooterList>
         <FooterList>Login</FooterList>
-        <FooterList>Results</FooterList>
+        <FooterList>Preview</FooterList>
       </FooterUl>
 
       <FooterUl>
@@ -61,7 +71,11 @@ const Footer = () => {
       <FooterList>0721346578</FooterList>
         <FooterList>0798674532</FooterList>
       </FooterUl>
-      
+      <MaterianUl>
+      <FacebookRoundedIcon/>
+      <InstagramIcon/>
+      <SubscriptionsRoundedIcon/>
+      </MaterianUl>
     </FooterContainer>
   
     )

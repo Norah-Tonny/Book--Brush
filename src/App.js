@@ -1,28 +1,25 @@
-
-import Home from "./Pages/Home";
-import  Category from "./Pages/Category";
-import Results from "./Components/Results"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import Preview from "./Components/Preview";
 import Register from "./Components/Register";
-import React from "react";
+
+// import Preview from "./Pages/Preview";
+
+
+
 
 const App = () => {
   return (
     
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        {/* <Route path="/login" element={<Login />}></Route> */}
-        {/* <Route path="/category" element={<Category />}></Route>
-        <Route path="/results" element={<Results/>}></Route>
-        <Route path="/hello" element={<Hello/>}></Route> */}
+    
 
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-  
-        <Route path="/results" element={<Results />}></Route>
-        <Route path="/register" element={<Register />}></Route>
+        <Route path="/" element={<Home />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/Register" element={<Register/>}/>
+        <Route path="/preview" element={<Preview/>}/>
 
       </Routes>
       </BrowserRouter>

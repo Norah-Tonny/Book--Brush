@@ -2,9 +2,11 @@ import HomeItems from "../Components/HomeItems";
 import styled from "styled-components"
 
 import Footer from "../Components/Footer"
-import Login from "./Login"
+
+import Nav from "../Components/Nav"
+import Category from "../Components/Category";
+import Slider from "../Components/Slider";
 import Register from "../Components/Register";
-import CategoriesItems from "../Components/CategoriesItems";
 
 
 const HomeContainer = styled.div``
@@ -13,12 +15,16 @@ const Home = () => {
 
     return (
       <HomeContainer>
-      {/* <HomeItems /> */}
-      {/* <CategoriesItems /> */}
-<Register/>
-        {/* <Login/> */}
-        <Footer/>
+        <Nav />
+        {/* <HomeItems />
+        <Slider/>
+        <Category /> */}
+        <Register/>
+        <Footer />
+        
+        
         </HomeContainer>
     )
+
 }
 export default Home;
