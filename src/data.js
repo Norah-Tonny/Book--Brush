@@ -4,7 +4,20 @@ export const Categories = [
     img: "https://images.pexels.com/photos/12928888/pexels-photo-12928888.jpeg?cs=srgb&dl=pexels-yuliia-tretynychenko-12928888.jpg&fm=jpg",
     desc: "Author Name", 
     publisher:"Published by:"  
-    },
+  },
+    
+  {
+    name: "Book Title",
+    img: "https://images.pexels.com/photos/9420589/pexels-photo-9420589.jpeg?cs=srgb&dl=pexels-taras-kots-9420589.jpg&fm=jpg",
+    desc: "Author Name",
+    publisher:"Published by:"  
+},
+{
+    name: "Book Title",
+    img: "https://images.pexels.com/photos/9463224/pexels-photo-9463224.jpeg?cs=srgb&dl=pexels-elizabeth-zernetska-9463224.jpg&fm=jpg",
+  desc: "Author Name",
+    publisher:"Published by:"    
+      },
   {
     name: "Book Title",
     img: "https://images.pexels.com/photos/13918727/pexels-photo-13918727.jpeg?cs=srgb&dl=pexels-eugenia-remark-13918727.jpg&fm=jpg",

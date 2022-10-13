@@ -22,17 +22,21 @@ z-index:200 ;`
 
 const SliderContainer = styled.div`
 display:flex;
- overflow: hidden;
+flex-wrap:wrap;
+//  overflow: hidden;
 border-radius:10px;
-background:#2C3639;
+// background:#2C3639;
+width:70%;
+margin:0 auto;
+
 `;
 
 const SliderItem = styled.div`
 // position:relative;
-width:100vw;
- height:100vh;
+width:50%;
+ height:600px;
 transition: all 2s ease-in;
-background:#2C3639;
+// background:#2C3639;
 
 `;
 
@@ -46,7 +50,8 @@ object-fit:cover;`;
 
 const SliderInfo = styled.div`
 position:absolute;
-top:0;   left:0;
+top:0; 
+  left:0;
 width: 100%;
 height: 100%;
 z-index:100;
@@ -56,27 +61,31 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 background: rgba(0,0,0,.5);
-font-size: 3rem;`
+font-size: 2rem;`
 
 const SliderHeading = styled.h2`
-text-transform: capitalize; 
-text-align:center;
-color:#A27B5C;
-font-weight:bold;
-font-size:2em;`
+color: #a27b5c;
+  font-size:4rem;
+//   padding:2em;
+  font-weight: bold;
+`
 
 const SliderPara = styled.p`
-margin-left:5em;
-padding-top:5em; 
-color:#a27b5c;
+margin-left: 5em;
+padding-top: 5em;
+color: #a27b5c;
 `
 
 const SliderDescription = styled.div`
-color:skyBlue;
-margin:.5em;
+
+color: skyBlue;
+  font-size: 4rem;
+  font-weight: bold;
 `;
 const ImageContainer = styled.div`
-width:100%;`
+width:100%;
+height:100%;
+`
 
 const Slider = () => {
   const [activeIndex, setActiveIndex]=useState(0)
@@ -90,6 +99,7 @@ const Slider = () => {
 
   }
   return (
+    
       <SliderContainer>
           <NavigationArrow direction="left" onClick={ ()=>handleSlide ("left")}>
                               <NavigateBeforeIcon />
