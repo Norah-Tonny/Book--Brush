@@ -30,7 +30,7 @@ background:#2C3639;
 const SliderItem = styled.div`
 // position:relative;
 width:100vw;
- height:70vh;
+ height:100vh;
 transition: all 2s ease-in;
 background:#2C3639;
 
