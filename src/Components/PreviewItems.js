@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { db } from "firebase/firestore";
 
@@ -26,17 +26,18 @@ const SelectItems = styled.select`
 padding:1em 4em;
 border-radius:6px;
 background:white; 
-
+margin:2em;
 `
 const OptionsItems = styled.option`
 
 `
 const Heading = styled.h3`
 width:100px;
+
 `
 const Container = styled.div`
  display:flex;
-gap:2em;
+
 `
 const InnerContainers = styled.div`
 
@@ -49,7 +50,12 @@ border:none;
 font-weight:bold;
 font-size:1rem;
 `
-const InnerRightContainer = styled.div``
+const InnerRightContainer = styled.div`
+background:red;
+width:${props => props.width}px;
+height:${props => props.height}px;
+font-family:${props=>props.font};
+`
 
 
 
@@ -57,8 +63,15 @@ const InnerRightContainer = styled.div``
 
 const PreviewItems = () => {
 
-    
-    const[size,setSize]=useState([])
+
+    const [size, setSize] = useState({
+        width: 0,
+        height: 0
+    })
+
+    const [font, setFont] = useState({
+        font: "",
+        })
 
 
     const [choice, setChoice] = useState({
@@ -70,10 +83,20 @@ const PreviewItems = () => {
 
     })
 
+    useEffect(() => {
+        let choiceArr;
+        choice.booksize !== "" ? choiceArr = choice.booksize.split(" ") : choiceArr = "";
+        setSize({ ...size, width: parseInt(choiceArr[0]), height: parseInt(choiceArr[2]) })
 
-    const SetHandler = () => {
+        choice.bookfont !== "" ? choiceArr = choice.bookfont .split(""): choiceArr = "";
+        setFont({...font,font:"font"})
 
-        console.log(choice)
+    }, [choice])
+
+
+    const setHandler = () => {
+
+        console.log("hello")
 
     }
 
@@ -83,7 +106,7 @@ const PreviewItems = () => {
     return (
 
         <OutterContainer>
-
+            {console.log(choice)}
             <BookPreview>Book Preview.</BookPreview>
             <ResultContainer>
 
@@ -97,10 +120,10 @@ const PreviewItems = () => {
                             <SelectItems onChange={(e) => setChoice({ ...choice, booksize: e.target.options[e.target.selectedIndex].text })
                             }>
 
-                                <OptionsItems>1200 X 628</OptionsItems>
-                                <OptionsItems>1080 x 1080</OptionsItems>
-                                <OptionsItems>1200 x 628</OptionsItems>
-                                <OptionsItems>828 x 315</OptionsItems>
+                                <OptionsItems>200  x 300</OptionsItems>
+                                <OptionsItems> 300 x 400</OptionsItems>
+                                <OptionsItems>500 x 600</OptionsItems>
+                                <OptionsItems>600 x 700</OptionsItems>
                             </SelectItems>
                         </InnerContainers>
                     </Container>
@@ -114,7 +137,7 @@ const PreviewItems = () => {
                             <SelectItems onChange={(e) => setChoice({ ...choice, bookfont: e.target.options[e.target.selectedIndex].text })}>
 
                                 <OptionsItems>san-serif</OptionsItems>
-                                <OptionsItems>Robot</OptionsItems>
+                                <OptionsItems>Roboto</OptionsItems>
                                 <OptionsItems>poppins</OptionsItems>
                                 <OptionsItems>Lobster</OptionsItems>
                             </SelectItems>
@@ -171,11 +194,11 @@ const PreviewItems = () => {
                         </InnerContainers>
                     </Container>
 
-                    <Button onClick={SetHandler}>Set Cover</Button>
+                    <Button onClick={setHandler}>Set Cover</Button>
 
                 </PrevLeft >
                 <PrevRight>
-                    <InnerRightContainer>
+                    <InnerRightContainer width={size.width} height={size.height} font-family={font.font-family}>
 
 
 
