@@ -3,8 +3,9 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Preview from "./Components/Preview";
 import Register from "./Components/Register";
+import Preview from "./Pages/Preview";
 
-// import Preview from "./Pages/Preview";
+
 
 
 

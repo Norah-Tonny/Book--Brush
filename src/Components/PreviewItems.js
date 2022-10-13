@@ -1,9 +1,15 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { db } from "firebase/firestore";
+
+
 
 const OutterContainer = styled.div`
 width:80%;
+border:2px solid grey;
+box-shadow:1px 1px 3px lightGrey;
 margin:0 auto;
+padding:2em;
 `
 const ResultContainer = styled.div`
 display:flex;
@@ -19,20 +25,18 @@ const PrevRight = styled.div``
 const SelectItems = styled.select`
 padding:1em 4em;
 border-radius:6px;
-background:white;  
+background:white; 
 
- 
 `
 const OptionsItems = styled.option`
 
 `
-const Heading = styled.h3`width:300px;`
+const Heading = styled.h3`
+width:100px;
+`
 const Container = styled.div`
  display:flex;
 gap:2em;
-
-        
-
 `
 const InnerContainers = styled.div`
 
@@ -44,12 +48,19 @@ border-radius:6px;
 border:none;
 font-weight:bold;
 font-size:1rem;
-
-
 `
 const InnerRightContainer = styled.div``
 
-const Preview = () => {
+
+
+
+
+const PreviewItems = () => {
+
+    
+    const[size,setSize]=useState([])
+
+
     const [choice, setChoice] = useState({
         booksize: "",
         bookfont: "",
@@ -166,11 +177,7 @@ const Preview = () => {
                 <PrevRight>
                     <InnerRightContainer>
 
-                        <p>{choice.booksize}</p>
-                        <p>{choice.bookfont}</p>
-                        <p>{choice.bookcolor}</p>
-                        <p>{choice.booktitle}</p>
-                        <p>{choice.BookPreview}</p>
+
 
                     </InnerRightContainer>
                 </PrevRight>
@@ -178,4 +185,4 @@ const Preview = () => {
         </OutterContainer>
     )
 }
-export default Preview;
+export default PreviewItems;
