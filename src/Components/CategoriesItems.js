@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Categories } from "../data";
-
+import { Link } from "react-router-dom";
 const CategoryContainer = styled.div`
   
   width: 90%;
@@ -8,7 +8,7 @@ const CategoryContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2em;
+    gap: 2em;
 
   `;
 
@@ -27,6 +27,7 @@ const BookContainer = styled.div`
 width: 15%;
 height: 300px;
 position: relative;
+
 `;
 
 const BookImg = styled.img`
@@ -46,12 +47,14 @@ width:100%;
 height:100%;
 justify-content:center;
 align-items:center;
+cursor:pointer;
 `;
 const CategoriesHeading = styled.h1`
 color: #a27b5c;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
+  padding-top:.5em;
   `;
   const ImageContainer = styled.div``;
   const Container = styled.div`
@@ -65,6 +68,7 @@ color:#a27b5c;`
 const CategoriesItems = () => {
   return (
     <Container>
+      <Link to="/preview">
       <CategoriesHeading>3D Book Covers</CategoriesHeading>
     <CategoryContainer>
       {Categories.map((Category, index) => {
@@ -79,7 +83,8 @@ const CategoriesItems = () => {
           </BookContainer>
         );
       })}
-      </CategoryContainer>
+        </CategoryContainer>
+        </Link>
       </Container>
   );
 };

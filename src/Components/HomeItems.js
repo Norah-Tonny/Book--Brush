@@ -5,6 +5,7 @@ const HomeContainer = styled.div`
 background:#2C3639;
 height:30vh;
 padding:2em;
+padding-bottom:3em;
 `
 const HomeHeading = styled.h1`
 text-align:center;
@@ -19,7 +20,7 @@ const HomeCover=styled.div``
 const HomeItems = () => {
   return (
     <HomeContainer>
-      <HomeHeading>THE EASIEST WAY TO CREATE<br/> PROFESSIONAL ADS & SOCIAL MEDIA<br/> IMAGES FOR YOUR BOOKS
+      <HomeHeading>THE EASIEST WAY TO GET<br/> PROFESSIONAL ADS & SOCIAL MEDIA<br/> IMAGES FOR YOUR BOOKS
       </HomeHeading>
     
     </HomeContainer>
