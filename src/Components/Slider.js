@@ -15,25 +15,25 @@ justify-content: center;
 align-items:center;
 position:absolute;
 top: 50%; left: ${props => props.direction === "left" ? 1 : 96}%;
-transform: translateY(-50%);
+transform: translateY(750%);
 z-index:200 ;`
 
 
 
 const SliderContainer = styled.div`
 display:flex;
-overflow: hidden;
+ overflow: hidden;
 border-radius:10px;
 background:#2C3639;
 `;
 
 const SliderItem = styled.div`
-position:relative;
+// position:relative;
 width:100vw;
  height:70vh;
-position:relative;flex:1;
 transition: all 2s ease-in;
 background:#2C3639;
+
 `;
 
 const Image = styled.img`
