@@ -1,6 +1,22 @@
 
-import Login from "../Pages/Login";
+// import Login from "../Pages/Login";
 import styled from "styled-components";
+import { useState } from 'react'
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { Password } from "@mui/icons-material";
+
+
+const Button = styled.button`
+padding:1em;
+width:10%;
+font-size 1em;
+background:#A27B5C;
+color:white;
+border-radius:5px;
+margin:2em 2em;
+`
+
 const LoginContainer = styled.div`
 
 padding:2em;
@@ -10,50 +26,97 @@ border-radius:5px;
 `;
 const LoginHeading = styled.h3``;
 
-
+const ShowPassword = styled.div`
+align-items:center;
+`
+const ShowEmail = styled.div``
 
 
 const LoginInput = styled.input`
-padding:2em;
-width:30%;
-border-radius:5px;
-`;
-const LoginParagraph = styled.p`
-font-size:1.5em;
+
+font-size:1rem;
+outline:none;
+border:none;
+padding:1em 3em;
 `;
 
-const LoginParagraphCheck=styled.p`
+const LoginParagraph= styled.p`
 text-align:center;
+color:#A27B5C;
 `
-const LoginCheck=styled.div``;
+const LoginCheck = styled.div`
+display:flex;
+justify-content:center;
+width:30%;
+margin:0 auto;
+
+border-radius:6px;
+align-items:center;
+background:white;
+`;
+const PasswordShower = styled.div``
+const Loginpassword = styled.div`
+
+`
 const LoginItems = () => {
-  
+  const [show, setShow] = useState(false)
+  const [values, setValues] = useState({
+    Email: "",
+    Password: "",
+    Login: "",
+  })
+
+  const handleEmailInputeChange = (event) => {
+    setValues({ ...values, Email: event.target.values })
+  }
+  const handlePasswordInputChange = (event) => {
+    setValues({ ...values, Password: event.target.values })
+
+  }
+
+  const handleLoginInputChange = (event) => {
+    setValues({ ...values, Login: event.target.values })
+  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (values.Email && values.Password && values.Login) {
+      // setValied(true);
+    }
+  }
   return (
     <LoginContainer>
 
-      <LoginParagraph>Username or Email</LoginParagraph>
+      <LoginParagraph onSubmit={handleSubmit}> username or Email</LoginParagraph>
       <LoginCheck>
-
-      <LoginInput type="text" placeholder="Email"/>
+        <LoginInput onChange={handleEmailInputeChange}
+          value={values.Email}
+          type="text" placeholder="Email" />
+        
       </LoginCheck>
 
       <LoginParagraph>Password</LoginParagraph>
       <LoginCheck>
-      <LoginInput type="text" placeholder="password"/>
+        <Loginpassword>
+          <LoginInput onChange={handlePasswordInputChange}
+            value={values.Password}
+            type={show ? "text" : "password"} placeholder="Password" />
+        </Loginpassword>
+        <PasswordShower>
+          <ShowPassword onClick={() => setShow(prev => !prev)}>{show ? <VisibilityIcon /> : <VisibilityOffIcon />}</ShowPassword>
+        </PasswordShower>
       </LoginCheck>
       <LoginParagraph>
-      <input type="checkbox" />
+        <input type="checkbox" />
         Remember me
       </LoginParagraph>
-<LoginCheck>
-<LoginParagraphCheck>
-      <LoginInput type="text" placeholder="Login" />
-      </LoginParagraphCheck>
-      </LoginCheck>
-      <LoginParagraph>
+
+
+      <Button onClick={handleSubmit}>Login</Button>
+
+      {/* <LoginParagraph>
       <input type="checkbox" />
         Forgot Pasword
-        </LoginParagraph>
+        </LoginParagraph> */}
     </LoginContainer>
   )
 }

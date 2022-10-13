@@ -45,6 +45,10 @@ const Nav = () => {
             <NavUl>
                 <NavList><Link to="/">Home</Link> </NavList> 
                 <NavList> <Link to="/login">Login</Link></NavList> 
+
+                        <NavList> <Link to="/login">Login</Link></NavList>
+                        <NavList> <Link to="/register">Register</Link></NavList> 
+
                 <NavList><Link to="/preview">Preview</Link> </NavList> 
                 <NavList> </NavList> 
                 </NavUl>

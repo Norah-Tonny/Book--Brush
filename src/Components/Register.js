@@ -51,15 +51,14 @@ const Register = () => {
     date: new Date(),
   });
 
-  // const [error, setError] = useState({
-  //   FirstnameError: "",
-  //   SecondnameError: "",
-  //   ContactError: "",
-  //   EmailError: "",
-  //   PasswordError: "",
-  //   date: new Date(),
-  // });
-  // // console.log(error);
+  const [error, setError] = useState({
+    FirstnameError: "",
+    SecondnameError: "",
+    ContactError: "",
+    EmailError: "",
+    PasswordError: "",
+    date: new Date(),
+  });
 
   const handleChange = async (e) => {
     e.preventDefault();
@@ -82,21 +81,21 @@ const Register = () => {
       }
     };
   };
-  // try {
-  //   if (values.FirstName === "") {
-  //     setError({ ...error, FirstName: "Enter your FirstName !!" });
-  //   } else if (values.SecondName === "") {
-  //     setError({ ...error, SecondName: "Enter your secondName !!" });
-  //   } else if (values.phone === "") {
-  //     setError({ ...error, phone: "Enter your phone!!" });
-  //   } else if (values.Password === "") {
-  //     setError({ ...error, Password: "Enter your password" });
-  //   } else {
-  //     console.log();
-  //   }
-  // } catch (error) {
-  //   console.log("error fill in the correct information", error);
-  // }
+  try {
+    if (values.FirstName === "") {
+      setError({ ...error, FirstName: "Enter your FirstName !!" });
+    } else if (values.SecondName === "") {
+      setError({ ...error, SecondName: "Enter your secondName !!" });
+    } else if (values.phone === "") {
+      setError({ ...error, phone: "Enter your phone!!" });
+    } else if (values.Password === "") {
+      setError({ ...error, Password: "Enter your password" });
+    } else {
+      console.log();
+    }
+  } catch (error) {
+    console.log("error fill in the correct information", error);
+  }
   return (
     
     <RegisterContainer>
@@ -105,25 +104,19 @@ const Register = () => {
 
       <Label>Full Name</Label>
 
-      {/* <P>{error.FirstnameError}</P> */}
-
       <RegisterInput type="text" placeholder="First Name" onChange={(e) => { setValues({ ...values, FirstName: e.target.value }) }} />
 
-      {/* <P>{error.SecondnameError}</P> */}
       <Label>Second Name</Label>
       <RegisterInput type="text" placeholder="Second Name" onChange={(e) => { setValues({ ...values, SecondName: e.target.value }) }} />
 
-      {/* <P>{error.ContactError}</P> */}
 
       <Label>Contact no</Label>
       <RegisterInput type="text" placeholder="phone" onChange={(e) => { setValues({ ...values, Contact: e.target.value }) }} />
-      {/* <P>{error.EmailError}</P> */}
       <Label>Email</Label>
       <RegisterInput type="text" placeholder="Email" onChange={(e) => {
         setValues({ ...values, Email: e.target.value });
       }}
       />
-      {/* <P>{error.PasswordError}</P> */}
 
       <Label>Password</Label>
 
