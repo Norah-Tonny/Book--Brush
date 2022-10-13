@@ -1,12 +1,22 @@
+import styled from "styled-components";
+import Nav from "../Components/Nav";
+
 import Footer from "../Components/Footer";
-import  PreviewItems from "../Components/Preview"
+import PreviewItems from "../Components/PreviewItems";
+
+
+
+const PreviewContainer = styled.div``
+
+
 const Preview = () => {
     return (
-        <>
-            <nav />
+        <PreviewContainer>
+            <Nav />
             <PreviewItems/>
-            <Footer/>
-        </>
-)
+            <Footer />
+        </PreviewContainer>
+
+    )
 }
 export default Preview;

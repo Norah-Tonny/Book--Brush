@@ -1,7 +1,11 @@
 
 import Login from "../Pages/Login";
 import styled from "styled-components";
+import { useState } from "react";
+
 const LoginContainer = styled.div`
+
+
 
 padding:2em;
 justify-content:space-around;
@@ -26,24 +30,49 @@ const LoginParagraphCheck=styled.p`
 text-align:center;
 `
 const LoginCheck=styled.div``;
+
 const LoginItems = () => {
   
+const [values,setValues]= useState({
+firstName:"",
+secondName:"",
+email:"",
+})
+const handleFirstName = (event) =>{
+  setValues({...values, firstName:event.target.values})
+}
+const handleLastName = (event) =>{
+  setValues({...values, SecondName:event.target.values})
+
+}
+const handleEmail = (event) =>{
+  setValues({...values, Email:event.target.values})
+
+}
+
+
   return (
     <LoginContainer>
 
-      <LoginParagraph>Username or Email</LoginParagraph>
+      <LoginParagraph>Login</LoginParagraph>
       <LoginCheck>
 
-      <LoginInput type="text" placeholder="Email"/>
+      <LoginInput value={values.firstName}
+      onChange={handleFirstName}
+      type="text"  placeholder="First Name" name="firstName"/>
       </LoginCheck>
 
-      <LoginParagraph>Password</LoginParagraph>
+      <LoginParagraph>Last Name</LoginParagraph>
       <LoginCheck>
-      <LoginInput type="text" placeholder="password"/>
+      <LoginInput onChange={handleLastName}  value={values.firstName}  type="text" placeholder="Last name" />
+      <LoginCheck>
+      <LoginParagraph>Email</LoginParagraph>
+      <LoginInput  value={values.Email} type="text" placeholder="Email"/>
+      </LoginCheck>
       </LoginCheck>
       <LoginParagraph>
       <input type="checkbox" />
-        Remember me
+        Remember me 
       </LoginParagraph>
 <LoginCheck>
 <LoginParagraphCheck>
