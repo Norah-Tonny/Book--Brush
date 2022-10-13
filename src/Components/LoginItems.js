@@ -1,6 +1,9 @@
 
-import Login from "../Pages/Login";
+// import Login from "../Pages/Login";
 import styled from "styled-components";
+import {useState} from 'react'
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 const LoginContainer = styled.div`
 
 padding:2em;
@@ -10,7 +13,8 @@ border-radius:5px;
 `;
 const LoginHeading = styled.h3``;
 
-
+const ShowPassword=styled.div``
+const ShowEmail=styled.div``
 
 
 const LoginInput = styled.input`
@@ -20,26 +24,30 @@ border-radius:5px;
 `;
 const LoginParagraph = styled.p`
 font-size:1.5em;
+color:#A27B5C;
 `;
 
 const LoginParagraphCheck=styled.p`
 text-align:center;
+color:#A27B5C;
 `
 const LoginCheck=styled.div``;
 const LoginItems = () => {
-  
+  const [show, setShow] = useState(false)
   return (
     <LoginContainer>
 
       <LoginParagraph>Username or Email</LoginParagraph>
       <LoginCheck>
 
-      <LoginInput type="text" placeholder="Email"/>
+        <LoginInput type={show ? "text" :"email"} placeholder="Email" />
+        <ShowEmail onClick={()=>setShow(prev=>!prev)}>{show?<VisibilityIcon/>:<VisibilityOffIcon/>}</ShowEmail>
       </LoginCheck>
 
       <LoginParagraph>Password</LoginParagraph>
       <LoginCheck>
-      <LoginInput type="text" placeholder="password"/>
+        <LoginInput type={show?"text":"password"} placeholder="Password" />
+       <ShowPassword onClick={()=>setShow(prev=>!prev)}>{show?<VisibilityIcon/>:<VisibilityOffIcon/>}</ShowPassword>
       </LoginCheck>
       <LoginParagraph>
       <input type="checkbox" />
@@ -47,7 +55,8 @@ const LoginItems = () => {
       </LoginParagraph>
 <LoginCheck>
 <LoginParagraphCheck>
-      <LoginInput type="text" placeholder="Login" />
+          <LoginInput type="text" placeholder="Login" />
+          
       </LoginParagraphCheck>
       </LoginCheck>
       <LoginParagraph>
