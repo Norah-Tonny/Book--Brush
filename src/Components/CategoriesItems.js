@@ -8,7 +8,7 @@ const CategoryContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-    gap: 2em;
+    gap: 15em;
 
   `;
 
