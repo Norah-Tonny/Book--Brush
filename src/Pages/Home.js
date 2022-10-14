@@ -1,6 +1,6 @@
 import HomeItems from "../Components/HomeItems";
 import styled from "styled-components"
-
+import Register from "../Components/Register";
 import Footer from "../Components/Footer"
 import Login from "./Login";
 import Nav from "../Components/Nav"
@@ -15,12 +15,11 @@ const Home = () => {
     return (
       <HomeContainer>
         <Nav />
-        <HomeItems />
-        <Slider/>
-        <Category /> */}
+        {/* <HomeItems /> */}
+        {/* <Slider/> */}
         <Login/>
         {/* <Register/> */}
-        <Category />
+        {/* <Category />  */}
         <Footer />
         
         
@@ -28,5 +27,5 @@ const Home = () => {
     )
 
 }
-export default Home;>>>>>>> development
-25
+export default Home;
+
