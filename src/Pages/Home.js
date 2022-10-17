@@ -1,8 +1,10 @@
 import HomeItems from "../Components/HomeItems";
 import styled from "styled-components"
+
+
 import Register from "../Components/Register";
+
 import Footer from "../Components/Footer"
-import Login from "./Login";
 import Nav from "../Components/Nav"
 import Category from "../Components/Category";
 import Slider from "../Components/Slider";
@@ -17,9 +19,16 @@ const Home = () => {
         <Nav />
         <HomeItems />
         <Slider/>
+
+        <Category /> 
+      
+    
+        
+
         {/* <Login/> */}
         {/* <Register/> */}
         <Category /> 
+
         <Footer />
         
         
