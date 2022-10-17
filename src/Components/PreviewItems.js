@@ -3,13 +3,18 @@ import styled from "styled-components";
 import { db } from "firebase/firestore";
 
 
+const PrevContainer = styled.div`
+background:#2C3639;
 
+`
 const OutterContainer = styled.div`
-width:80%;
+width:60%;
 border:2px solid grey;
 box-shadow:1px 1px 3px lightGrey;
 margin:0 auto;
 padding:4em;
+background:#A27B5C;
+color:#2C3639;
 `
 const ResultContainer = styled.div`
 display:flex;
@@ -25,11 +30,16 @@ const PrevRight = styled.div``
 const SelectItems = styled.select`
 padding:1em 4em;
 border-radius:6px;
+border:none;
 background:white; 
+outline:none;
 margin:2em;
+cursor:pointer;
 `
 const OptionsItems = styled.option`
-
+border:none;
+outline:none;
+cursor:pointer;
 `
 const Heading = styled.h3`
 width:100px;
@@ -49,19 +59,41 @@ border-radius:6px;
 border:none;
 font-weight:bold;
 font-size:1rem;
+cursor:pointer;
 `
 const InnerRightContainer = styled.div`
-background:red;
+// background:green;
 width:${props => props.width}px;
 height:${props => props.height}px;
-font-family:${props=>props.font};
+background:${props => props.color};
+border:2px solid grey;
 `
-
-
-
+const HeadingTitle = styled.h3`
+font-family:${props => props.font};
+title:${props => props.title};
+width:300px;
+`
+const InputText = styled.input`
+padding:1em 3em;
+background:white;
+border:none;
+outline:none;
+margin-left:2em;
+width:34%;
+`
 
 
 const PreviewItems = () => {
+
+    useEffect(() => {
+        const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBPgs7j1C2zEVyLCY9fGiC6S7Ya1rxBqGk`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setFont(data.items))
+
+    }, [])
+
+
 
 
     const [size, setSize] = useState({
@@ -69,10 +101,13 @@ const PreviewItems = () => {
         height: 0
     })
 
-    const [font, setFont] = useState({
-        font: "",
-        })
-
+    const [font, setFont] = useState([])
+    const [title, setTitle] = useState({
+        title: "",
+    })
+    const [color, setColor] = useState({
+        color: "",
+    })
 
     const [choice, setChoice] = useState({
         booksize: "",
@@ -82,21 +117,28 @@ const PreviewItems = () => {
         booktext: "",
 
     })
+    console.log(font)
 
     useEffect(() => {
         let choiceArr;
+
         choice.booksize !== "" ? choiceArr = choice.booksize.split(" ") : choiceArr = "";
         setSize({ ...size, width: parseInt(choiceArr[0]), height: parseInt(choiceArr[2]) })
 
-        choice.bookfont !== "" ? choiceArr = choice.bookfont .split(""): choiceArr = "";
-        setFont({...font,font:"font"})
+        choice.bookfont !== "" ? choiceArr = choice.bookfont : choiceArr = "";
+        setFont({ ...font, fontFamily: choiceArr })
+
+        choice.booktitle !== "" ? choiceArr = choice.booktitle.split(" ") : choiceArr = "";
+        setTitle({ ...title, title: choiceArr })
+
+        choice.bookcolor !== "" ? choiceArr = choice.bookcolor : choiceArr = "";
+        setColor({ ...title, color: choiceArr })
 
     }, [choice])
 
 
     const setHandler = () => {
 
-        console.log("hello")
 
     }
 
@@ -104,7 +146,7 @@ const PreviewItems = () => {
 
 
     return (
-
+<PrevContainer>
         <OutterContainer>
             {console.log(choice)}
             <BookPreview>Book Preview.</BookPreview>
@@ -119,7 +161,7 @@ const PreviewItems = () => {
                         <InnerContainers>
                             <SelectItems onChange={(e) => setChoice({ ...choice, booksize: e.target.options[e.target.selectedIndex].text })
                             }>
-
+                                <OptionsItems selected>150 x 200</OptionsItems>
                                 <OptionsItems>200  x 300</OptionsItems>
                                 <OptionsItems> 300 x 400</OptionsItems>
                                 <OptionsItems>500 x 600</OptionsItems>
@@ -131,15 +173,31 @@ const PreviewItems = () => {
                     <Container>
                         <HeadingContainer>
 
+
+                            <Heading>BookTittle</Heading>
+                        </HeadingContainer>
+                        <InnerContainers>
+                            <InputText type="text" placeholder="Edit your book" onChange={(e) => setChoice({ ...choice, booktitle: e.target.value })} />
+                        </InnerContainers>
+                    </Container>
+
+                    <Container>
+                        <HeadingContainer>
+
                             <Heading>BookFont</Heading>
                         </HeadingContainer>
                         <InnerContainers>
                             <SelectItems onChange={(e) => setChoice({ ...choice, bookfont: e.target.options[e.target.selectedIndex].text })}>
+                                {
+                                    
+                                    Array.from(font).map(item => {
+                                        return (
+                                            <OptionsItems>{ item.family}</OptionsItems>
+               )
+           })
+    
+                                }
 
-                                <OptionsItems>san-serif</OptionsItems>
-                                <OptionsItems>Roboto</OptionsItems>
-                                <OptionsItems>poppins</OptionsItems>
-                                <OptionsItems>Lobster</OptionsItems>
                             </SelectItems>
                         </InnerContainers>
                     </Container>
@@ -150,30 +208,7 @@ const PreviewItems = () => {
                             <Heading>Bookcolor</Heading>
                         </HeadingContainer>
                         <InnerContainers>
-
-                            <SelectItems onChange={(e) => setChoice({ ...choice, bookcolor: e.target.options[e.target.selectedIndex].text })}>
-                                <OptionsItems>red</OptionsItems>
-                                <OptionsItems>blue</OptionsItems>
-                                <OptionsItems>green</OptionsItems>
-                                <OptionsItems>yellow</OptionsItems>
-                            </SelectItems>
-                        </InnerContainers>
-                    </Container>
-
-                    <Container>
-                        <HeadingContainer>
-
-
-                            <Heading>BookTittle</Heading>
-                        </HeadingContainer>
-                        <InnerContainers>
-
-                            <SelectItems onChange={(e) => setChoice({ ...choice, booktitle: e.target.options[e.target.selectedIndex].text })}>
-                                <OptionsItems>Lion In Jungle</OptionsItems>
-                                <OptionsItems>Largest Dragon</OptionsItems>
-                                <OptionsItems>Education the Key</OptionsItems>
-                                <OptionsItems>The Sun Rise</OptionsItems>
-                            </SelectItems>
+                            <InputText type="text" placeholder="Edit your color" onChange={(e) => setChoice({ ...choice, booktitle: e.target.value })} />
                         </InnerContainers>
                     </Container>
 
@@ -198,14 +233,15 @@ const PreviewItems = () => {
 
                 </PrevLeft >
                 <PrevRight>
-                    <InnerRightContainer width={size.width} height={size.height} font-family={font.font-family}>
-
-
-
+                    <InnerRightContainer width={size.width} height={size.height} background={color.color}>
+                        <HeadingTitle title={title.title}>{choice.booktitle}</HeadingTitle>
+                        <HeadingTitle font-family={font.fontFamily}></HeadingTitle>
+                        <HeadingTitle ></HeadingTitle>
                     </InnerRightContainer>
                 </PrevRight>
             </ResultContainer >
-        </OutterContainer>
+            </OutterContainer>
+        </PrevContainer>
     )
 }
 export default PreviewItems;
