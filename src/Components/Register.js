@@ -4,7 +4,8 @@ import { db } from "../Firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const RegisterContainer = styled.div`
-  text-align: center;
+ gap:6em; 
+ text-align:center;
 `;
 
 const RegisterHeading = styled.h1``;
@@ -12,16 +13,11 @@ const RegisterHeading = styled.h1``;
 const RegisterParagraph = styled.p``;
 
 const RegisterInput = styled.input`
-  padding: 2em;
-  width: 30%;
+   padding: 2em;
+   width: 30%;
   border-radius: 5px;
 `;
-
-const TextArea = styled.textarea`
-  width: 30%;
-  padding: 5em;
-  border-radius: 5px;
-`;
+const RgisterRegister=styled.div``
 
 const Button = styled.button`
 padding:1em;
@@ -36,7 +32,6 @@ margin:2em 2em;
 const RegisterArea = styled.div``;
 
 const Label = styled.div`
-  padding: 2em;
 `;
 
 const P = styled.p``;
@@ -48,7 +43,6 @@ const Register = () => {
     Contact: "",
     Email: "",
     Password: "",
-    date: new Date(),
   });
 
   const [error, setError] = useState({
@@ -56,13 +50,29 @@ const Register = () => {
     SecondnameError: "",
     ContactError: "",
     EmailError: "",
-    PasswordError: "",
-    date: new Date(),
+    PasswordError: ""
   });
 
   const handleChange = async (e) => {
     e.preventDefault();
-    // setError(validation(values));
+    try {
+      if (values.FirstName == "") {
+        setError(prev=>({ ...prev, FirstnameError: "Enter your firstName " }));
+      } 
+      if (values.SecondName == "") {
+        setError(prev=>({ ...prev, SecondnameError: "Enter your secondName " }));
+      }
+       if (values.Contact == "") {
+        setError(prev=>({ ...prev, ContactError: "Enter your contact" }));
+      }
+      if(values.Email==""){
+        setError(prev=>({...prev, EmailError:"Enter your email" }))
+      }
+        if (values.Password == "") {
+        setError(prev=>({ ...prev, PasswordError: "Enter your password" }));
+      } 
+       
+      else {
 
     await addDoc(collection(db, "error"), values);
     setValues({
@@ -71,66 +81,43 @@ const Register = () => {
       Contact: "",
       Email: "",
       Password: "",
-      date: new Date(),
     });
-
-    const validation = (values) => {
-      let error = {};
-      if (!values.username.trim()) {
-        error.username = "username required";
+        console.log();
       }
-    };
-  };
-  try {
-    if (values.FirstName === "") {
-      setError({ ...error, FirstName: "Enter your FirstName !!" });
-    } else if (values.SecondName === "") {
-      setError({ ...error, SecondName: "Enter your secondName !!" });
-    } else if (values.phone === "") {
-      setError({ ...error, phone: "Enter your phone!!" });
-    } else if (values.Password === "") {
-      setError({ ...error, Password: "Enter your password" });
-    } else {
-      console.log();
+    } 
+    catch (error) {
+      console.log("error fill in the correct information", error);
     }
-  } catch (error) {
-    console.log("error fill in the correct information", error);
-  }
+
+  };
+  
   return (
     
     <RegisterContainer>
-      <RegisterHeading>Restration Form</RegisterHeading>
+      <RegisterHeading>Registration Form</RegisterHeading>
       <RegisterParagraph> Please fill in the form keenly</RegisterParagraph>
 
-      <Label>Full Name</Label>
-
-      <RegisterInput type="text" placeholder="First Name" onChange={(e) => { setValues({ ...values, FirstName: e.target.value }) }} />
-
-      <Label>Second Name</Label>
+      {values.FirstName == "" && <P style={{color:"red"}}>{error.FirstnameError}</P>}
+  <RegisterInput type="text" placeholder="First Name" onChange={(e) => { setValues({ ...values, FirstName: e.target.value }) }} />
+      
+      {values.FirstName == "" &&  <P style={{color:"red"}}>{error.SecondnameError}</P>}
       <RegisterInput type="text" placeholder="Second Name" onChange={(e) => { setValues({ ...values, SecondName: e.target.value }) }} />
 
-
-      <Label>Contact no</Label>
+      {values.Contact == "" && <P style={{color:"red"}}>{error.ContactError}</P>}
       <RegisterInput type="text" placeholder="phone" onChange={(e) => { setValues({ ...values, Contact: e.target.value }) }} />
-      <Label>Email</Label>
-      <RegisterInput type="text" placeholder="Email" onChange={(e) => {
-        setValues({ ...values, Email: e.target.value });
-      }}
-      />
+      
+      {values.Email == "" && <P style={{color:"red"}}>{error.EmailError}</P>}
+      <RegisterInput type="text" placeholder="Email" onChange={(e) => { setValues({ ...values, Email: e.target.value })}}/>
 
-      <Label>Password</Label>
+{values.Password == "" && <P style={{color:"red"}}>{error.PasswordError}</P>} 
+<RegisterInput type="text" value={setValues.Password} placeholder="Password" onChange={(e) => {setValues({ ...values, Password: e.target.value }) }} />
 
-      <RegisterInput
-        type="text"
-        value={setValues.Password}
-        placeholder="Password"
-        onChange={(e) => {
-          setValues({ ...values, Password: e.target.value });
-        }}
-      />
-      <Button onClick={handleChange}>Submit</Button>
+<RgisterRegister>
+<Button onClick={(e)=>handleChange(e)}>Submit</Button>
+</RgisterRegister>
     </RegisterContainer>
   );
 };
 
-export default Register;
+
+export default Register;  //  width: 30%;

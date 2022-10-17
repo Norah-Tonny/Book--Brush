@@ -44,7 +44,6 @@ const Nav = () => {
             <NavRight>
             <NavUl>
                 <NavList><Link to="/">Home</Link> </NavList> 
-                <NavList> <Link to="/login">Login</Link></NavList> 
 
                         <NavList> <Link to="/login">Login</Link></NavList>
                         <NavList> <Link to="/register">Register</Link></NavList> 

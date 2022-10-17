@@ -1,5 +1,9 @@
 import HomeItems from "../Components/HomeItems";
 import styled from "styled-components"
+
+
+import Register from "../Components/Register";
+
 import Footer from "../Components/Footer"
 import Nav from "../Components/Nav"
 import Category from "../Components/Category";
@@ -15,10 +19,16 @@ const Home = () => {
         <Nav />
         <HomeItems />
         <Slider/>
+
         <Category /> 
       
     
         
+
+        {/* <Login/> */}
+        {/* <Register/> */}
+        <Category /> 
+
         <Footer />
         
         
@@ -27,3 +37,4 @@ const Home = () => {
 
 }
 export default Home;
+

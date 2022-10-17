@@ -233,10 +233,17 @@ const PreviewItems = () => {
 
                 </PrevLeft >
                 <PrevRight>
+
                     <InnerRightContainer width={size.width} height={size.height} background={color.color}>
                         <HeadingTitle title={title.title}>{choice.booktitle}</HeadingTitle>
                         <HeadingTitle font-family={font.fontFamily}></HeadingTitle>
                         <HeadingTitle ></HeadingTitle>
+
+                    <InnerRightContainer width={size.width} height={size.height} >
+
+
+
+
                     </InnerRightContainer>
                 </PrevRight>
             </ResultContainer >
