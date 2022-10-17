@@ -198,7 +198,7 @@ const PreviewItems = () => {
 
                 </PrevLeft >
                 <PrevRight>
-                    <InnerRightContainer width={size.width} height={size.height} font-family={font.font-family}>
+                    <InnerRightContainer width={size.width} height={size.height} >
 
 
 
