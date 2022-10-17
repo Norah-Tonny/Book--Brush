@@ -4,9 +4,8 @@ import { db } from "../Firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const RegisterContainer = styled.div`
-gap:6em; 
+ gap:6em; 
  text-align:center;
- flex-direction:column;
 `;
 
 const RegisterHeading = styled.h1``;
@@ -14,8 +13,8 @@ const RegisterHeading = styled.h1``;
 const RegisterParagraph = styled.p``;
 
 const RegisterInput = styled.input`
-  padding: 2em;
-  width: 30%;
+   padding: 2em;
+   width: 30%;
   border-radius: 5px;
 `;
 const RgisterRegister=styled.div``
@@ -33,7 +32,6 @@ margin:2em 2em;
 const RegisterArea = styled.div``;
 
 const Label = styled.div`
-  padding: 2em;
 `;
 
 const P = styled.p``;
@@ -99,19 +97,19 @@ const Register = () => {
       <RegisterHeading>Registration Form</RegisterHeading>
       <RegisterParagraph> Please fill in the form keenly</RegisterParagraph>
 
-      {values.FirstName == "" && <P>{error.FirstnameError}</P>}
+      {values.FirstName == "" && <P style={{color:"red"}}>{error.FirstnameError}</P>}
   <RegisterInput type="text" placeholder="First Name" onChange={(e) => { setValues({ ...values, FirstName: e.target.value }) }} />
       
-      {values.FirstName == "" &&  <P>{error.SecondnameError}</P>}
+      {values.FirstName == "" &&  <P style={{color:"red"}}>{error.SecondnameError}</P>}
       <RegisterInput type="text" placeholder="Second Name" onChange={(e) => { setValues({ ...values, SecondName: e.target.value }) }} />
 
-      {values.Contact == "" && <P>{error.ContactError}</P>}
+      {values.Contact == "" && <P style={{color:"red"}}>{error.ContactError}</P>}
       <RegisterInput type="text" placeholder="phone" onChange={(e) => { setValues({ ...values, Contact: e.target.value }) }} />
       
-      {values.Email == "" && <P>{error.EmailError}</P>}
+      {values.Email == "" && <P style={{color:"red"}}>{error.EmailError}</P>}
       <RegisterInput type="text" placeholder="Email" onChange={(e) => { setValues({ ...values, Email: e.target.value })}}/>
 
-{values.Password == "" && <P>{error.PasswordError}</P>} 
+{values.Password == "" && <P style={{color:"red"}}>{error.PasswordError}</P>} 
 <RegisterInput type="text" value={setValues.Password} placeholder="Password" onChange={(e) => {setValues({ ...values, Password: e.target.value }) }} />
 
 <RgisterRegister>
@@ -122,4 +120,4 @@ const Register = () => {
 };
 
 
-export default Register;
+export default Register;  //  width: 30%;

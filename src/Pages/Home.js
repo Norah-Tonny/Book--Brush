@@ -15,11 +15,11 @@ const Home = () => {
     return (
       <HomeContainer>
         <Nav />
-        {/* <HomeItems /> */}
-        {/* <Slider/> */}
-        <Login/>
+        <HomeItems />
+        <Slider/>
+        {/* <Login/> */}
         {/* <Register/> */}
-        {/* <Category />  */}
+        <Category /> 
         <Footer />
         
         

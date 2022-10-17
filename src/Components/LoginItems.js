@@ -50,7 +50,6 @@ display:flex;
 justify-content:center;
 width:30%;
 margin:0 auto;
-
 border-radius:6px;
 align-items:center;
 background:white;
@@ -63,8 +62,10 @@ color:white;
 font-size:3em;
 padding:1.5em;
 `
+
 const LoginItems = () => {
   const [show, setShow] = useState(false)
+
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -106,35 +107,32 @@ const LoginItems = () => {
      console.log("error fill in the correct information", error);
     }
   }
+
   return (
     <LoginContainer>
       <LoginLogo>Login</LoginLogo>
-
-
-      {values.email == "" && <p>{error.emailError}</p>}
+      {values.email == "" && <p style={{color:"red"}}>{error.emailError}</p>}
       <LoginParagraph> Email</LoginParagraph>
-      <LoginCheck>
-       {values.password == "" && <p>{error.password}</p>}
-        <LoginInput type="text"  value={setValues.Password} placeholder="Email" onChange={(e) =>{ setValues({...values, email:e.target.value})}} />
-        
-      </LoginCheck>
+      <LoginCheck> 
+        <LoginInput type="text"  value={setValues.email} placeholder="Email" onChange={(e) =>{ setValues({...values, email:e.target.value})}} />
 
+      </LoginCheck>
+        {values.email == "" && <p style={{color:"red"}}>{error.passwordError}</p>}
       <LoginParagraph>Password</LoginParagraph>
       <LoginCheck>
         <Loginpassword>
           <LoginInput type="text" value={setValues.Password} placeholder="Password" onChange={(e) => {setValues({ ...values, Password: e.target.value }) }} />
-
         </Loginpassword>
         <PasswordShower>
-          <ShowPassword onClick={(e) => setShow(prev => !prev)}>{show ? <VisibilityIcon /> : <VisibilityOffIcon />}</ShowPassword>
+         <ShowPassword onClick={(e) => setShow(prev => !prev)}>{show ? <VisibilityIcon /> : <VisibilityOffIcon />}</ShowPassword>
         </PasswordShower>
       </LoginCheck>
       <LoginParagraph>
     <LoginInput type="checkbox"/>Remember me</LoginParagraph>
 
       <Button onClick={(e)=>handleChange(e)}>Submit</Button>
-
-    </LoginContainer>
+   </LoginContainer>
+   
   )
  }
 
