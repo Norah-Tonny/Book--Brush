@@ -46,6 +46,7 @@ const Nav = () => {
         <NavContainer>
             <InnerNav>
                 <NavLeft>
+<<<<<<< HEAD
                     <LogoContainer>
                         <Logo>Book Brush</Logo>
                     </LogoContainer>
@@ -53,6 +54,14 @@ const Nav = () => {
                 <NavRight>
                     <NavUl>
                         <NavList><Link to="/">Home</Link> </NavList>
+=======
+                <Logo>Book Brush</Logo>
+            </NavLeft>
+            <NavRight>
+            <NavUl>
+                <NavList><Link to="/">Home</Link> </NavList> 
+
+>>>>>>> 57714fb252e1fdfea31eb19ae4eb71572c452934
                         <NavList> <Link to="/login">Login</Link></NavList>
                         <NavList> <Link to="/register">Register</Link></NavList>
                         <NavList><Link to="/preview">Preview</Link> </NavList>
