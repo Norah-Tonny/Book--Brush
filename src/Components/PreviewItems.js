@@ -37,8 +37,8 @@ height:100vh;
 
 `
 const SelectItems = styled.select`
-// padding:1em 4em;
-// border-radius:6px;
+padding:.3em 1em;
+border-radius:6px;
 // border:none;
 // background:white; 
 // outline:none;
@@ -83,7 +83,7 @@ border:2px solid #2C3639;
 const HeadingTitle = styled.h3`
 font-family:${props => props.font};
 title:${props => props.title};
-width:fit-content;
+
 `
 const InputText = styled.input`
 padding:1em 2em;
@@ -92,7 +92,8 @@ background:black;
 outline:none;
 // width:100%;
 // margin:2em;
-
+border-radius:6px;
+color:white;
 `
 
 
@@ -258,7 +259,6 @@ const PreviewItems = () => {
                         <InnerRightContainer width={size.width} height={size.height} background={color.color}>
                             <HeadingTitle title={title.title}>{choice.booktitle}</HeadingTitle>
                             <HeadingTitle font-family={font.fontFamily}></HeadingTitle>
-                            <HeadingTitle ></HeadingTitle>
                         </InnerRightContainer>
                     </PrevRight>
                 </ResultContainer >
