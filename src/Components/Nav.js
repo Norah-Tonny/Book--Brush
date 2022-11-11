@@ -28,23 +28,19 @@ color:#2C3639;
 
 const Logo = styled.h1`
 
-// font-size:3rem;
 color:#A27B5C;
 padding-left:1em;
 
-color:#A27B5C;
-padding-left:.3em;
-
 `;
 
-// const LogoContainer = styled.div`
-// border:2px solid #2C3639;;
-// width:160px;
-// height:160px;
-// border-radius:50%;
-// background:#2C3639;
-// box-shadow:1px 1px 6px #2C3639;
-// `
+const LogoContainer = styled.div`
+border:2px solid #2C3639;;
+width:160px;
+height:160px;
+border-radius:50%;
+background:#2C3639;
+box-shadow:1px 1px 6px #2C3639;
+`
 
 
 
@@ -63,28 +59,7 @@ const Nav = () => {
 
                         </LogoContainer>
             </NavLeft>
-            {/* <NavRight> */}
-            {/* <NavUl>
-                <NavList><Link to="/">Home</Link> </NavList> 
-
-                        <Logo>Book Brush</Logo>
-
-                    </LogoContainer>
-                    </
-                </NavLeft> */}
-
-                    </LogoContainer>
-                
-            
-                    <NavUl>
-                        
-
-                        <Logo>Book Brush</Logo>
-                  
-                    </NavUl>
-                </NavLeft>
-
-            
+          
 
                 <NavRight>
                     <NavUl>
