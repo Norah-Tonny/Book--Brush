@@ -1,159 +1,131 @@
-import Login from "../Pages/Login";
-
-
-import Login from "../Pages/Login";
-
-
 import styled from "styled-components";
-const LoginContainer = styled.div`
-margin:10em;
-justify-content:space-around;
-text-align:center;
-border-radius:5px;
+import { useState } from "react";
+import { db } from "../Firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { Link } from "@mui/material";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+
+const RegisterContainer = styled.div`
+ gap:6em; 
+ text-align:center;
+ background:#2C3639;
+
 `;
-const LoginHeading = styled.h3``;
 
 
+const RegisterParagraph = styled.p`
+color:#A27B5C;
+font-size:1em;
 
-
-
-const LoginInput = styled.input`
-padding:2em;
-width:30%;
-border-radius:5px;
 `;
-const LoginParagraph = styled.p`
-font-size:1.5em;
+
+const RegisterInput = styled.input`
+   padding: 2em;
+   width: 30%;
+  border-radius: 5px;
+  border:none;
+  box-shadow:0 0 3px 1px lightgrey;
+  outline:none;
+`;
+const RgisterRegister = styled.div``
+
+const Button = styled.button`
+padding:1em;
+font-size:1rem;
+curser:;
+background:#A27B5C;
 color:white;
+border-radius:5px;
+margin:2em 2em;
+border:none;
 `;
 
+const LoginParagraph = styled.div`
+color:#A27B5C;
+font-size:1em;
+padding-bottom:2em;
+`;
 
-const LoginParagraphCheck=styled.p`
-text-align:center;
+const Label = styled.div`
+`;
+
+const P = styled.p``;
+
+const Form = styled.form`
+display:flex;
+flex-direction:column;
+align-items:center;
 `
-const LoginCheck=styled.div``;
 
-const LoginParagraphCheck = styled.p`
-text-align:center;
-`
-const LoginCheck = styled.div``;
-const LoginItems = () => {
-
-   const [show, setShow] = useState(false)
-
+const Register = () => {
   const [values, setValues] = useState({
-   email: "",
-     password: "",
-   })
 
-   const [error, setError] = useState({
-     emailError: "",
-     passwordError: ""
-    
-   });
-  console.log(error)
+    Email: "",
+    Password: "",
+  });
 
+  const [error, setError] = useState({
+ 
+    EmailError: "",
+    PasswordError: ""
+  });
 
-   const handleChange = async (e) => {
-    e.preventDefault();
+  const handleChange = async (e) => {
+  
     try {
-      if(values.email==""){
-       setError(prev=>({...prev, emailError:"Enter your email" }))
+    
+      if (values.Email == "") {
+        setError(prev => ({ ...prev, EmailError: "Enter your email" }))
       }
-       if (values.password == "") {
-        setError(prev=>({ ...prev, passwordError: "Enter your password" }));
-    } 
-       
-    else {  await addDoc(collection(db, "error"), values);
-     setValues({
-     email: "",
-      password: "",
+      if (values.Password == "") {
+        setError(prev => ({ ...prev, PasswordError: "Enter your password" }));
+      }
 
-     });
-      console.log(error);
+      else {
 
-   }
-  }
-  catch (error) {
-     console.log("error fill in the correct information", error);
-
+        await addDoc(collection(db, "error"), values);
+        setValues({
+          Email: "",
+          Password: "",
+        });
+        
+      }
+    }
+    catch (error) {
+      console.log("error fill in the correct information", error);
     }
 
- 
-  const handleLoginInputChange = (event) => {
-    setValues({ ...values, Login: event.target.values })
-   }
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (values.email && values.password && values.Login) {
-  }
-  }
-    
-     }
-    
+  };
+
   return (
-   
-    <LoginContainer>
 
-      <LoginParagraph>Username or Email</LoginParagraph>
-      <LoginCheck>
+    <RegisterContainer>
+      <RegisterParagraph>Email Address</RegisterParagraph>
 
-
-      <LoginInput type="text" placeholder="password"/>
-
-        <LoginInput type="text" placeholder="password" />
-
-      </LoginCheck>
-
-      <LoginParagraph>Pasword</LoginParagraph>
-      <LoginCheck>
-
-      <LoginInput type="text" placeholder="password"/>
-      </LoginCheck>
-      <LoginParagraph>
-
-    <LoginInput type="checkbox"/>Remember me</LoginParagraph>
+        {values.Email == "" ? <P style={{ color: "red" }}>{error.EmailError}</P>:<P></P>}
+        <RegisterInput type="email" placeholder="Email" onChange={(e) => { setValues({ ...values, Email: e.target.value }) }} />
+<RegisterParagraph>password</RegisterParagraph>
+        {values.Password == "" ? <P style={{ color: "red" }}>{error.PasswordError}</P>:<P></P>}
+        <RegisterInput type="text" value={setValues.Password} placeholder="Password" onChange={(e) => { setValues({ ...values, Password: e.target.value }) }} />
+        {/* <InputShowFlex>
+                        <PasswordInput type={show?"text":"password"} placeholder="Password" />
+                        <ShowPassword onClick={()=>setShow(prev=>!prev)}>{show?<VisibilityIcon/>:<VisibilityOffIcon/>}</ShowPassword>
+                    </InputShowFlex> */}
 
 
-    <Link to="/">  <Button onClick={(e)=>handleChange(e)}>Login</Button> </Link>
+        <RgisterRegister>
+        <Link to="/"> <Button onClick={(e) => handleChange(e)}>Login </Button></Link>
 
-   </LoginContainer>
-    <input type="checkbox" />
-        Remember me
-      </LoginParagraph>
-<LoginCheck>
-<LoginParagraphCheck>
-      <LoginInput type="text" placeholder="Login" />
-      </LoginParagraphCheck>
-      </LoginCheck>
-      <LoginParagraph>
-      <input type="checkbox" />
-        Forgot Pasword
-        </LoginParagraph>
-
-        <LoginInput type="text" placeholder="password" />
-      </LoginCheck>
-      <LoginParagraph>
+        </RgisterRegister>
+      
+        <LoginParagraph>
         <input type="checkbox" />
         Remember me
       </LoginParagraph>
-      <LoginCheck>
-        <LoginParagraphCheck>
-          <LoginInput type="text" placeholder="Login" />
-        </LoginParagraphCheck>
-      </LoginCheck>
-      <LoginParagraph>
-        <input type="checkbox" />
-        Forgot Pasword
-      </LoginParagraph>
-    </LoginContainer>
+    </RegisterContainer>
   );
 };
 
 
-
-export default LoginItems;
-
-
-export default LoginItems;
-
+export default Register;  

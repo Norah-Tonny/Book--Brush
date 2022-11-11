@@ -1,20 +1,7 @@
-
-
 import styled from "styled-components";
 import Nav from "../Components/Nav";
-
 import Footer from "../Components/Footer";
 import PreviewItems from "../Components/PreviewItems";
-
-
-
-const PreviewContainer = styled.div``
-
-import PreviewItems from "../Components/PreviewItems"
-import styled from "styled-components";
-import Nav from "../Components/Nav";
-
-import Footer from "../Components/Footer"
 
 
 const PreviewContainer = styled.div`
@@ -30,7 +17,6 @@ const Preview = () => {
 
             <PreviewItems/>
             <Footer />
-        </PreviewContainer>
 
             <PreviewItems />
             <Footer />
