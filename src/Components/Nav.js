@@ -27,9 +27,17 @@ color:#2C3639;
 `
 
 const Logo = styled.h1`
+
+// font-size:3rem;
+color:#A27B5C;
+padding-left:1em;
+
 color:#A27B5C;
 padding-left:.3em;
+
 `;
+
+
 
 const NavRight = styled.div``
 const NavLeft = styled.div``
@@ -47,9 +55,21 @@ const Nav = () => {
             <InnerNav>
                 <NavLeft>
                     <LogoContainer>
-                        <Logo>Book Brush</Logo>
+
+                        <Logo className="fontFamily">Book Brush</Logo>
                     </LogoContainer>
+                
+            
+                    <NavUl>
+                        
+
+                        <Logo>Book Brush</Logo>
+                  
+                    </NavUl>
                 </NavLeft>
+            
+
+
                 <NavRight>
                     <NavUl>
                         <NavList><Link to="/">Home</Link> </NavList>
@@ -58,7 +78,9 @@ const Nav = () => {
                         <NavList><Link to="/preview">Preview</Link> </NavList>
                         <NavList> </NavList>
                     </NavUl>
-                </NavRight>
+            </NavRight>
+            
+
             </InnerNav>
 
         </NavContainer>

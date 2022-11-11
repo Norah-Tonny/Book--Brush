@@ -277,7 +277,7 @@ const PreviewItems = () => {
 
                     </PrevLeft >
                     <PrevRight>
-                        <InnerRightContainer width={size.width} height={size.height} background={color.color} style={{ fontFamily:choice.bookfont }}>
+                        <InnerRightContainer width={size.width} height={size.height} background={color.color} style={{ fontFamily: choice.bookfont }}>
                             <HeadingTitle title={title.title}>{choice.booktitle}</HeadingTitle>
                             {/* <HeadingTitle font-family={font.fontFamily}></HeadingTitle> */}
                         </InnerRightContainer>
