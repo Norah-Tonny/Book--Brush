@@ -1,3 +1,10 @@
+
+import Login from "../Pages/Login";
+import { useState } from "react";
+import { db } from "../Firebase";
+import { addDoc, collection } from "firebase/firestore";
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 import { useState } from "react";
 import { db } from "../Firebase";
@@ -30,6 +37,9 @@ const RegisterInput = styled.input`
 `;
 const RgisterRegister = styled.div``
 
+const Button =styled.button``
+
+
 const Button = styled.button`
 padding:1em;
 font-size:1rem;
@@ -50,6 +60,7 @@ padding-bottom:2em;
 const Label = styled.div`
 `;
 
+
 const P = styled.p``;
 
 const Form = styled.form`
@@ -57,6 +68,15 @@ display:flex;
 flex-direction:column;
 align-items:center;
 `
+const LoginParagraphCheck=styled.p`
+text-align:center;
+`
+
+const LoginCheck = styled.div``;
+const LoginItems = () => {
+
+   const [show, setShow] = useState(false)
+
 
 const Register = () => {
   const [values, setValues] = useState({
@@ -117,6 +137,7 @@ const Register = () => {
         <RgisterRegister>
         <Link to="/"> <Button onClick={(e) => handleChange(e)}>Login </Button></Link>
 
+
         </RgisterRegister>
       
         <LoginParagraph>
@@ -129,3 +150,9 @@ const Register = () => {
 
 
 export default Register;  
+
+   </LoginContainer>
+    
+  );
+};
+export default LoginItems;

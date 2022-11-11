@@ -28,12 +28,8 @@ color:#2C3639;
 
 const Logo = styled.h1`
 
-// font-size:3rem;
 color:#A27B5C;
 padding-left:1em;
-
-color:#A27B5C;
-padding-left:.3em;
 
 `;
 
@@ -61,10 +57,13 @@ const Nav = () => {
                         <Logo className="fontFamily">Book Brush</Logo>
 
 
-                        </LogoContainer>
+               
           </NavLeft>
 
-            
+
+            </NavLeft>
+          
+
 
                 <NavRight>
                     <NavUl>
