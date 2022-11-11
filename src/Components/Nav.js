@@ -57,9 +57,13 @@ const Nav = () => {
                         <Logo className="fontFamily">Book Brush</Logo>
 
 
-                        </LogoContainer>
+               
+          </NavLeft>
+
+
             </NavLeft>
           
+
 
                 <NavRight>
                     <NavUl>
