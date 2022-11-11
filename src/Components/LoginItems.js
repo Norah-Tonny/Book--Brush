@@ -1,5 +1,8 @@
+import Login from "../Pages/Login";
+
 
 import Login from "../Pages/Login";
+
 
 import styled from "styled-components";
 const LoginContainer = styled.div`
@@ -24,22 +27,110 @@ font-size:1.5em;
 color:white;
 `;
 
+
+const LoginParagraphCheck=styled.p`
+text-align:center;
+`
+const LoginCheck=styled.div``;
+
 const LoginParagraphCheck = styled.p`
 text-align:center;
 `
 const LoginCheck = styled.div``;
 const LoginItems = () => {
+
+   const [show, setShow] = useState(false)
+
+  const [values, setValues] = useState({
+   email: "",
+     password: "",
+   })
+
+   const [error, setError] = useState({
+     emailError: "",
+     passwordError: ""
+    
+   });
+  console.log(error)
+
+
+   const handleChange = async (e) => {
+    e.preventDefault();
+    try {
+      if(values.email==""){
+       setError(prev=>({...prev, emailError:"Enter your email" }))
+      }
+       if (values.password == "") {
+        setError(prev=>({ ...prev, passwordError: "Enter your password" }));
+    } 
+       
+    else {  await addDoc(collection(db, "error"), values);
+     setValues({
+     email: "",
+      password: "",
+
+     });
+      console.log(error);
+
+   }
+  }
+  catch (error) {
+     console.log("error fill in the correct information", error);
+
+    }
+
+ 
+  const handleLoginInputChange = (event) => {
+    setValues({ ...values, Login: event.target.values })
+   }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (values.email && values.password && values.Login) {
+  }
+  }
+    
+     }
+    
   return (
+   
     <LoginContainer>
 
       <LoginParagraph>Username or Email</LoginParagraph>
       <LoginCheck>
 
+
+      <LoginInput type="text" placeholder="password"/>
+
         <LoginInput type="text" placeholder="password" />
+
       </LoginCheck>
 
       <LoginParagraph>Pasword</LoginParagraph>
       <LoginCheck>
+
+      <LoginInput type="text" placeholder="password"/>
+      </LoginCheck>
+      <LoginParagraph>
+
+    <LoginInput type="checkbox"/>Remember me</LoginParagraph>
+
+
+    <Link to="/">  <Button onClick={(e)=>handleChange(e)}>Login</Button> </Link>
+
+   </LoginContainer>
+    <input type="checkbox" />
+        Remember me
+      </LoginParagraph>
+<LoginCheck>
+<LoginParagraphCheck>
+      <LoginInput type="text" placeholder="Login" />
+      </LoginParagraphCheck>
+      </LoginCheck>
+      <LoginParagraph>
+      <input type="checkbox" />
+        Forgot Pasword
+        </LoginParagraph>
+
         <LoginInput type="text" placeholder="password" />
       </LoginCheck>
       <LoginParagraph>
@@ -60,5 +151,9 @@ const LoginItems = () => {
 };
 
 
-  
+
 export default LoginItems;
+
+
+export default LoginItems;
+
