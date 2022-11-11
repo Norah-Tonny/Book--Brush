@@ -1,7 +1,8 @@
 
 import LoginItems from "../Components/LoginItems"
-import styled from "styled-components";
-import Nav from "../Components/Nav";
+import styled from "styled-components"
+
+const LoginContainer = styled.div``
 
 import Footer from "../Components/Footer"
 
@@ -11,15 +12,21 @@ background:#2C3639;
 `
 
 
+
 const Login = () => {
     return (
         <LoginContainer>
-            <Nav />
+
+            <LoginItems />
+        </LoginContainer>
+   <Nav />
             <LoginItems />
             <Footer />
         </LoginContainer >
 
 
+
     )
 }
 export default Login;
+

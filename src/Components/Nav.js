@@ -41,14 +41,7 @@ padding-left:.3em;
 
 const NavRight = styled.div``
 const NavLeft = styled.div``
-const LogoContainer = styled.div`
-border:2px solid #2C3639;;
-width:160px;
-height:160px;
-border-radius:50%;
-background:#2C3639;
-box-shadow:1px 1px 6px #2C3639;
-`
+
 const Nav = () => {
     return (
         <NavContainer>
@@ -57,6 +50,18 @@ const Nav = () => {
                     <LogoContainer>
 
                         <Logo className="fontFamily">Book Brush</Logo>
+
+                        </LogoContainer>
+            </NavLeft>
+            {/* <NavRight> */}
+            {/* <NavUl>
+                <NavList><Link to="/">Home</Link> </NavList> 
+
+                        <Logo>Book Brush</Logo>
+                    </LogoContainer>
+                    </
+                </NavLeft> */}
+
                     </LogoContainer>
                 
             
@@ -68,6 +73,7 @@ const Nav = () => {
                     </NavUl>
                 </NavLeft>
             
+
 
 
                 <NavRight>
