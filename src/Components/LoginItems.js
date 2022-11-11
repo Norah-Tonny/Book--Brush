@@ -74,62 +74,60 @@ outline:none;
 `
 
 const LoginItems = () => {
-  const [show, setShow] = useState(false)
+   const [show, setShow] = useState(false)
 
   const [values, setValues] = useState({
-    email: "",
-    password: "",
-  })
+   email: "",
+     password: "",
+   })
 
-  const [error, setError] = useState({
-    emailError: "",
-    passwordError: ""
+   const [error, setError] = useState({
+     emailError: "",
+     passwordError: ""
     
-  });
+   });
   console.log(error)
 
 
- const handleChange = async (e) => {
+   const handleChange = async (e) => {
     e.preventDefault();
-   try {
-     
-     if(values.email==""){
+    try {
+      if(values.email==""){
        setError(prev=>({...prev, emailError:"Enter your email" }))
-     }
-     if (values.password == "") {
-       setError(prev=>({ ...prev, passwordError: "Enter your password" }));
+      }
+       if (values.password == "") {
+        setError(prev=>({ ...prev, passwordError: "Enter your password" }));
     } 
        
-     else {
+    else {  await addDoc(collection(db, "error"), values);
+     setValues({
+     email: "",
+      password: "",
 
-    await addDoc(collection(db, "error"), values);
-    setValues({
-    email: "",
-     password: "",
-
-   });
-     console.log(error);
+     });
+      console.log(error);
 
    }
   }
-
-
-  const handleLoginInputChange = (event) => {
-    setValues({ ...values, Login: event.target.values })
-  }
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (values.Email && values.Password && values.Login) {
-      
-
-    
-   catch (error) {
+  catch (error) {
      console.log("error fill in the correct information", error);
 
     }
-  }
 
+ 
+  const handleLoginInputChange = (event) => {
+    setValues({ ...values, Login: event.target.values })
+   }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (values.email && values.password && values.Login) {
+  }
+  }
+    
+     }
+    
   return (
+   
     <LoginContainer>
       <LoginLogo>Login</LoginLogo>
       <RegisterHeading>Don't have an account yet? <Span>Sing up.</Span></RegisterHeading>
@@ -156,13 +154,7 @@ const LoginItems = () => {
 
     <Link to="/">  <Button onClick={(e)=>handleChange(e)}>Login</Button> </Link>
 
-
-    </LoginContainer>
-
-      <Button onClick={(e)=>handleChange(e)}>Submit</Button>
-
    </LoginContainer>
-   
 
   )
  }

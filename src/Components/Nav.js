@@ -36,14 +36,14 @@ color:#A27B5C;
 padding-left:.3em;
 
 `;
-const LogoContainer = styled.div`
-border:2px solid #2C3639;;
-width:160px;
-height:160px;
-border-radius:50%;
-background:#2C3639;
-box-shadow:1px 1px 6px #2C3639;
-`
+// const LogoContainer = styled.div`
+// border:2px solid #2C3639;;
+// width:160px;
+// height:160px;
+// border-radius:50%;
+// background:#2C3639;
+// box-shadow:1px 1px 6px #2C3639;
+// `
 
 
 const NavRight = styled.div``
@@ -64,22 +64,18 @@ const Nav = () => {
                     <LogoContainer>
 
                         <Logo className="fontFamily">Book Brush</Logo>
-                        </LogoContainer>
-            </NavLeft>
-            <NavRight>
-            <NavUl>
-                <NavList><Link to="/">Home</Link> </NavList> 
-
-                        <Logo>Book Brush</Logo>
                     </LogoContainer>
                 </NavLeft>
+
+            
                 <NavRight>
                     <NavUl>
-                        <NavList><Link to="/">Home</Link> </NavList>
-                        <NavList> <Link to="/login">Login</Link></NavList>
-                        <NavList> <Link to="/register">Register</Link></NavList>
-                        <NavList><Link to="/preview">Preview</Link> </NavList>
-                        <NavList> </NavList>
+ <NavList><Link to="/">Home</Link> </NavList>
+<NavList> <Link to="/login">Login</Link></NavList>
+  <NavList> <Link to="/register">Register</Link></NavList>
+<NavList><Link to="/preview">Preview</Link> </NavList>
+                        <NavList>
+                             </NavList>
                     </NavUl>
                 </NavRight>
             </InnerNav>
