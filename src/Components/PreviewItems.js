@@ -174,110 +174,6 @@ const PreviewItems = () => {
 
 
     return (
-
-
-        <OutterContainer>
-            {console.log(choice)}
-            <BookPreview>Book Preview.</BookPreview>
-            <ResultContainer>
-
-                <PrevLeft>
-                    <Container>
-                        <HeadingContainer>
-
-                            <Heading>Booksize</Heading>
-                        </HeadingContainer>
-                        <InnerContainers>
-                            <SelectItems onChange={(e) => setChoice({ ...choice, booksize: e.target.options[e.target.selectedIndex].text })
-                            }>
-
-                                <OptionsItems>200  x 300</OptionsItems>
-                                <OptionsItems> 300 x 400</OptionsItems>
-                                <OptionsItems>500 x 600</OptionsItems>
-                                <OptionsItems>600 x 700</OptionsItems>
-                            </SelectItems>
-                        </InnerContainers>
-                    </Container>
-
-                    <Container>
-                        <HeadingContainer>
-
-                            <Heading>BookFont</Heading>
-                        </HeadingContainer>
-                        <InnerContainers>
-                            <SelectItems onChange={(e) => setChoice({ ...choice, bookfont: e.target.options[e.target.selectedIndex].text })}>
-
-                                <OptionsItems>san-serif</OptionsItems>
-                                <OptionsItems>Roboto</OptionsItems>
-                                <OptionsItems>poppins</OptionsItems>
-                                <OptionsItems>Lobster</OptionsItems>
-                            </SelectItems>
-                        </InnerContainers>
-                    </Container>
-
-                    <Container>
-                        <HeadingContainer>
-
-                            <Heading>Bookcolor</Heading>
-                        </HeadingContainer>
-                        <InnerContainers>
-
-                            <SelectItems onChange={(e) => setChoice({ ...choice, bookcolor: e.target.options[e.target.selectedIndex].text })}>
-                                <OptionsItems>red</OptionsItems>
-                                <OptionsItems>blue</OptionsItems>
-                                <OptionsItems>green</OptionsItems>
-                                <OptionsItems>yellow</OptionsItems>
-                            </SelectItems>
-                        </InnerContainers>
-                    </Container>
-
-                    <Container>
-                        <HeadingContainer>
-
-
-                            <Heading>BookTittle</Heading>
-                        </HeadingContainer>
-                        <InnerContainers>
-
-                            <SelectItems onChange={(e) => setChoice({ ...choice, booktitle: e.target.options[e.target.selectedIndex].text })}>
-                                <OptionsItems>Lion In Jungle</OptionsItems>
-                                <OptionsItems>Largest Dragon</OptionsItems>
-                                <OptionsItems>Education is the Key</OptionsItems>
-                                <OptionsItems>The Sun Rise</OptionsItems>
-                            </SelectItems>
-                        </InnerContainers>
-                    </Container>
-
-                    <Container>
-                        <HeadingContainer>
-                            <Heading>BooksText</Heading>
-                        </HeadingContainer>
-
-                        <InnerContainers>
-
-                            <SelectItems onChange={(e) => setChoice({ ...choice, booktext: e.target.options[e.target.selectedIndex].text })}>
-                                <OptionsItems>0.2rem</OptionsItems>
-                                <OptionsItems>.4rem</OptionsItems>
-                                <OptionsItems>0.6rem</OptionsItems>
-                                <OptionsItems>0.8rem</OptionsItems>
-                                <OptionsItems>1rem</OptionsItems>
-                            </SelectItems>
-                        </InnerContainers>
-                    </Container>
-
-                    <Button onClick={setHandler}>Set Cover</Button>
-
-                </PrevLeft >
-                <PrevRight>
-                    <InnerRightContainer width={size.width} height={size.height} >
-
-
-
-                    </InnerRightContainer>
-                </PrevRight>
-            </ResultContainer >
-        </OutterContainer>
-
         <PrevContainer>
             <OutterContainer>
                 {/* {console.log(choice)} */}
@@ -381,15 +277,14 @@ const PreviewItems = () => {
 
                     </PrevLeft >
                     <PrevRight>
-                        <InnerRightContainer width={size.width} height={size.height} background={color.color} style={{ fontFamily:choice.bookfont }}>
+                        <InnerRightContainer width={size.width} height={size.height} background={color.color} style={{ fontFamily: choice.bookfont }}>
                             <HeadingTitle title={title.title}>{choice.booktitle}</HeadingTitle>
-                            <HeadingTitle font-family={font.fontFamily}></HeadingTitle>
+                            {/* <HeadingTitle font-family={font.fontFamily}></HeadingTitle> */}
                         </InnerRightContainer>
                     </PrevRight>
                 </ResultContainer >
             </OutterContainer>
         </PrevContainer>
-
     )
 }
 export default PreviewItems;
