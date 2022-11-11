@@ -59,7 +59,8 @@ const OutterContainer = styled.div`
   box-shadow: 1px 1px 3px lightGrey;
   margin: 0 auto;
   padding: 4em;
-  background: red;
+  background:#2C3639;
+  color:#A27B5C;
 `;
 const ResultContainer = styled.div`
   display: flex;
@@ -225,11 +226,7 @@ const PreviewItems = () => {
   console.log(font);
 
   useEffect(() => {
-    // const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBPgs7j1C2zEVyLCY9fGiC6S7Ya1rxBqGk`
-    // fetch(url)
-    //     .then(res => res.json())
-    //     .then(data => setFont(data.items))
-
+ 
     let choiceArr;
 
     choice.booksize !== ""
@@ -385,7 +382,7 @@ const PreviewItems = () => {
               </InnerContainers>
             </Container>
 
-            {/* <Button onClick={setHandler}>Set Cover</Button> */}
+            
           </PrevLeft>
           <PrevRight>
             <InnerRightContainer
@@ -397,7 +394,7 @@ const PreviewItems = () => {
               <HeadingTitle title={title.title}>
                 {choice.booktitle}
               </HeadingTitle>
-              {/* <HeadingTitle font-family={font.fontFamily}></HeadingTitle> */}
+              
             </InnerRightContainer>
           </PrevRight>
         </ResultContainer>
