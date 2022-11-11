@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { db } from "firebase/firestore";
-
+import GoogleFontLoader from 'react-google-font-loader';
 
 const PrevContainer = styled.div`
 
@@ -128,12 +128,12 @@ const PreviewItems = () => {
     console.log(font)
 
     useEffect(() => {
-    const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBPgs7j1C2zEVyLCY9fGiC6S7Ya1rxBqGk`
-    fetch(url)
-        .then(res => res.json())
-        .then(data => setFont(data.items))
+        const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBPgs7j1C2zEVyLCY9fGiC6S7Ya1rxBqGk`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setFont(data.items))
 
-    },[])
+    }, [])
     console.log(font)
 
     useEffect(() => {
@@ -156,7 +156,13 @@ const PreviewItems = () => {
         choice.bookcolor !== "" ? choiceArr = choice.bookcolor : choiceArr = "";
         setColor({ ...title, color: choiceArr })
 
-    },[choice])
+        // Get Fonts
+        const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBPgs7j1C2zEVyLCY9fGiC6S7Ya1rxBqGk`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setFont(data.items))
+
+    }, [choice])
 
 
     const setHandler = () => {
@@ -181,7 +187,7 @@ const PreviewItems = () => {
                                 <Heading>Booksize</Heading>
                             </HeadingContainer>
                             <InnerContainers>
-                                <SelectItems onChange={(e) => setChoice({ ...choice, booksize: e.target.options[e.target.selectedIndex].text })
+                                <SelectItems onChange={(e) => setChoice(prev => ({ ...prev, booksize: e.target.options[e.target.selectedIndex].text }))
                                 }>
                                     <OptionsItems selected>150 x 200</OptionsItems>
                                     <OptionsItems>200 x 300</OptionsItems>
@@ -199,7 +205,7 @@ const PreviewItems = () => {
                                 <Heading>BookTittle</Heading>
                             </HeadingContainer>
                             <InnerContainers>
-                                <InputText type="text" placeholder="Edit your book" onChange={(e) => setChoice({ ...choice, booktitle: e.target.value })} />
+                                <InputText type="text" placeholder="Edit your book" onChange={(e) => setChoice(prev => ({ ...prev, booktitle: e.target.value }))} />
                             </InnerContainers>
                         </Container>
 
@@ -209,7 +215,7 @@ const PreviewItems = () => {
                                 <Heading>BookFont</Heading>
                             </HeadingContainer>
                             <InnerContainers>
-                                <SelectItems onChange={(e) => setChoice({ ...choice, bookfont: e.target.options[e.target.selectedIndex].text })}>
+                                <SelectItems value={choice.bookfont} onChange={(e) => setChoice(prev => ({ ...prev, bookfont: e.target.options[e.target.selectedIndex].text }))}>
                                     {console.log(choice.bookfont)}
                                     {
 
@@ -225,13 +231,28 @@ const PreviewItems = () => {
                             </InnerContainers>
                         </Container>
 
+
+
+
+                        <GoogleFontLoader
+                            fonts={[
+                                {
+                                    font: choice.bookfont,
+                                    weights: [400, '400i'],
+                                },
+                            ]}
+                            subsets={['cyrillic-ext', 'greek']}
+                        />
+
+
+
                         <Container>
                             <HeadingContainer>
 
                                 <Heading>Bookcolor</Heading>
                             </HeadingContainer>
                             <InnerContainers>
-                                <InputText type="text" placeholder="Edit your color" onChange={(e) => setChoice({ ...choice, bookcolor: e.target.value })} />
+                                <InputText type="text" placeholder="Edit your color" onChange={(e) => setChoice(prev => ({ ...prev, bookcolor: e.target.value }))} />
                             </InnerContainers>
                         </Container>
 
@@ -242,7 +263,7 @@ const PreviewItems = () => {
 
                             <InnerContainers>
 
-                                <SelectItems onChange={(e) => setChoice({ ...choice, booktext: e.target.options[e.target.selectedIndex].text })}>
+                                <SelectItems onChange={(e) => setChoice(prev => ({ ...prev, booktext: e.target.options[e.target.selectedIndex].text }))}>
                                     <OptionsItems>0.2rem</OptionsItems>
                                     <OptionsItems>.4rem</OptionsItems>
                                     <OptionsItems>0.6rem</OptionsItems>
@@ -256,7 +277,7 @@ const PreviewItems = () => {
 
                     </PrevLeft >
                     <PrevRight>
-                        <InnerRightContainer width={size.width} height={size.height} background={color.color}>
+                        <InnerRightContainer width={size.width} height={size.height} background={color.color} style={{ fontFamily:choice.bookfont }}>
                             <HeadingTitle title={title.title}>{choice.booktitle}</HeadingTitle>
                             <HeadingTitle font-family={font.fontFamily}></HeadingTitle>
                         </InnerRightContainer>
