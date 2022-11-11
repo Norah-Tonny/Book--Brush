@@ -1,79 +1,44 @@
+import Login from "../Pages/Login";
+
+
+import Login from "../Pages/Login";
+
 
 import styled from "styled-components";
-import { useState } from 'react'
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { Link } from "react-router-dom";
-import { db } from "../Firebase";
-import { collection, addDoc } from "firebase/firestore";
-
-
-const Button = styled.button`
-padding:1em;
-width:10%;
-font-size:1rem;
-background:#A27B5C;
-color:white;
-border-radius:5px;
-margin:2em 2em;
-`
-
 const LoginContainer = styled.div`
-
-padding:2em;
+margin:10em;
 justify-content:space-around;
 text-align:center;
 border-radius:5px;
 `;
 const LoginHeading = styled.h3``;
 
-const ShowPassword = styled.div`
-align-items:center;
-`
-const ShowEmail = styled.div``
+
+
 
 
 const LoginInput = styled.input`
-
-font-size:1rem;
-outline:none;
-border:none;
-padding:1em 3em;
-
-`
-
-const LoginParagraph= styled.p`
-text-align:center;
-color:#A27B5C;
-`
-const LoginCheck = styled.div`
-display:flex;
-justify-content:center;
+padding:2em;
 width:30%;
-margin:0 auto;
-border-radius:6px;
-align-items:center;
-background:white;
+border-radius:5px;
 `;
-const PasswordShower = styled.div``
-const Loginpassword = styled.div`
-`
-const LoginLogo=styled.div`
-color:#A27B5C;
-font-size:3em;
-padding:1.5em;
-`
+const LoginParagraph = styled.p`
+font-size:1.5em;
+color:white;
+`;
 
-const RegisterHeading=styled.div`
-color:#A27B5C;
-font-size:1rem;
-`
-const Span=styled.span`
-color:red;
-outline:none;
-`
 
+const LoginParagraphCheck=styled.p`
+text-align:center;
+`
+const LoginCheck=styled.div``;
+
+const LoginParagraphCheck = styled.p`
+text-align:center;
+`
+const LoginCheck = styled.div``;
 const LoginItems = () => {
+
    const [show, setShow] = useState(false)
 
   const [values, setValues] = useState({
@@ -129,34 +94,66 @@ const LoginItems = () => {
   return (
    
     <LoginContainer>
-      <LoginLogo>Login</LoginLogo>
-      <RegisterHeading>Don't have an account yet? <Span>Sing up.</Span></RegisterHeading>
 
-      {values.email == "" && <p style={{color:"red"}}>{error.emailError}</p>}
-      <LoginParagraph> Email</LoginParagraph>
-      <LoginCheck> 
-        <LoginInput type="text"  value={setValues.email} placeholder="Email" onChange={(e) =>{ setValues({...values, email:e.target.value})}} />
+      <LoginParagraph>Username or Email</LoginParagraph>
+      <LoginCheck>
+
+
+      <LoginInput type="text" placeholder="password"/>
+
+        <LoginInput type="text" placeholder="password" />
 
       </LoginCheck>
-        {values.email == "" && <p style={{color:"red"}}>{error.passwordError}</p>}
-      <LoginParagraph>Password</LoginParagraph>
+
+      <LoginParagraph>Pasword</LoginParagraph>
       <LoginCheck>
-        <Loginpassword>
-          <LoginInput type={show?"text":"password"} value={setValues.Password} placeholder="Password" onChange={(e) => {setValues({ ...values, Password: e.target.value }) }} />
-        </Loginpassword>
-        <PasswordShower>
-         <ShowPassword onClick={(e) => setShow(prev => !prev)}>{show ? <VisibilityIcon /> : <VisibilityOffIcon />}</ShowPassword>
-        </PasswordShower>
+
+      <LoginInput type="text" placeholder="password"/>
       </LoginCheck>
       <LoginParagraph>
+
     <LoginInput type="checkbox"/>Remember me</LoginParagraph>
 
 
     <Link to="/">  <Button onClick={(e)=>handleChange(e)}>Login</Button> </Link>
 
    </LoginContainer>
+    <input type="checkbox" />
+        Remember me
+      </LoginParagraph>
+<LoginCheck>
+<LoginParagraphCheck>
+      <LoginInput type="text" placeholder="Login" />
+      </LoginParagraphCheck>
+      </LoginCheck>
+      <LoginParagraph>
+      <input type="checkbox" />
+        Forgot Pasword
+        </LoginParagraph>
 
-  )
- }
+        <LoginInput type="text" placeholder="password" />
+      </LoginCheck>
+      <LoginParagraph>
+        <input type="checkbox" />
+        Remember me
+      </LoginParagraph>
+      <LoginCheck>
+        <LoginParagraphCheck>
+          <LoginInput type="text" placeholder="Login" />
+        </LoginParagraphCheck>
+      </LoginCheck>
+      <LoginParagraph>
+        <input type="checkbox" />
+        Forgot Pasword
+      </LoginParagraph>
+    </LoginContainer>
+  );
+};
+
+
 
 export default LoginItems;
+
+
+export default LoginItems;
+
