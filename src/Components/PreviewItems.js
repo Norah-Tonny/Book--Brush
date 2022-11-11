@@ -379,9 +379,9 @@ export default PreviewItems;
 
 
     return (
+
         <PrevContainer>
             <OutterContainer>
-                {/* {console.log(choice)} */}
                 <BookPreview>Book Preview.</BookPreview>
                 <ResultContainer>
 

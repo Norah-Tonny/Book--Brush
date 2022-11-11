@@ -1,10 +1,16 @@
 
 import LoginItems from "../Components/LoginItems"
+
+import styled from "styled-components";
+import Nav from "../Components/Nav";
+import Footer from "../Components/Footer";
+
 import styled from "styled-components"
 
 const LoginContainer = styled.div``
 
 import Footer from "../Components/Footer"
+
 
 
 const LoginContainer = styled.div`

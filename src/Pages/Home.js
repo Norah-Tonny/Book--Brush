@@ -1,8 +1,12 @@
 import HomeItems from "../Components/HomeItems";
 import styled from "styled-components";
+
+import Footer from "../Components/Footer"
+
 import Footer from "../Components/Footer";
 
 // import Register from "../Components/Register";
+
 
 import Nav from "../Components/Nav"
 import Category from "../Components/Category";
@@ -19,12 +23,14 @@ const Home = () => {
         <Nav />
         <HomeItems />
 
+
         <Slider />
         {/* <Register/> */}
 
         <Slider/>
 
         <Category /> 
+
         <Footer />
         
         </>

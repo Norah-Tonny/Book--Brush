@@ -38,7 +38,61 @@ text-align:center;
 `
 const LoginCheck = styled.div``;
 const LoginItems = () => {
+
+   const [show, setShow] = useState(false)
+
+  const [values, setValues] = useState({
+   email: "",
+     password: "",
+   })
+
+   const [error, setError] = useState({
+     emailError: "",
+     passwordError: ""
+    
+   });
+  console.log(error)
+
+
+   const handleChange = async (e) => {
+    e.preventDefault();
+    try {
+      if(values.email==""){
+       setError(prev=>({...prev, emailError:"Enter your email" }))
+      }
+       if (values.password == "") {
+        setError(prev=>({ ...prev, passwordError: "Enter your password" }));
+    } 
+       
+    else {  await addDoc(collection(db, "error"), values);
+     setValues({
+     email: "",
+      password: "",
+
+     });
+      console.log(error);
+
+   }
+  }
+  catch (error) {
+     console.log("error fill in the correct information", error);
+
+    }
+
+ 
+  const handleLoginInputChange = (event) => {
+    setValues({ ...values, Login: event.target.values })
+   }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (values.email && values.password && values.Login) {
+  }
+  }
+    
+     }
+    
   return (
+   
     <LoginContainer>
 
       <LoginParagraph>Username or Email</LoginParagraph>
@@ -57,7 +111,14 @@ const LoginItems = () => {
       <LoginInput type="text" placeholder="password"/>
       </LoginCheck>
       <LoginParagraph>
-      <input type="checkbox" />
+
+    <LoginInput type="checkbox"/>Remember me</LoginParagraph>
+
+
+    <Link to="/">  <Button onClick={(e)=>handleChange(e)}>Login</Button> </Link>
+
+   </LoginContainer>
+    <input type="checkbox" />
         Remember me
       </LoginParagraph>
 <LoginCheck>
@@ -92,6 +153,7 @@ const LoginItems = () => {
 
 
 export default LoginItems;
+
 
 export default LoginItems;
 
