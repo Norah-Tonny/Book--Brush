@@ -1,5 +1,4 @@
 
-// import Login from "../Pages/Login";
 import styled from "styled-components";
 import { useState } from 'react'
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -102,9 +101,20 @@ const LoginItems = () => {
 
    }
   }
+
+
+  const handleLoginInputChange = (event) => {
+    setValues({ ...values, Login: event.target.values })
+  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (values.Email && values.Password && values.Login) {
+      
+
     
    catch (error) {
      console.log("error fill in the correct information", error);
+
     }
   }
 
@@ -130,9 +140,13 @@ const LoginItems = () => {
       <LoginParagraph>
     <LoginInput type="checkbox"/>Remember me</LoginParagraph>
 
+
+    </LoginContainer>
+
       <Button onClick={(e)=>handleChange(e)}>Submit</Button>
    </LoginContainer>
    
+
   )
  }
 
