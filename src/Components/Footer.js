@@ -1,7 +1,10 @@
 import styled from "styled-components"
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+
+import CallIcon from "@mui/icons-material/Call";
+import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from '@mui/icons-material/Instagram';
-import SubscriptionsRoundedIcon from '@mui/icons-material/SubscriptionsRounded';
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+
 
 const FooterContainer = styled.div`
 display:flex;
@@ -12,15 +15,31 @@ padding:2em;
 const FooterUl = styled.ul`
 
 jusify_content:space-around; 
-// color:white; 
 `
 const FooterList = styled.li`
 list-style-type:none;
 color:#2C3639;
+font-size:1rem;
+font-weight:bold;
 
 `
+const ContactText = styled.div`
+color:#2C3639;
+font-size:1rem;
+font-weight:bold;`
+
 const FooterHeading = styled.h1`
-color:#2C3639;`
+color:#2C3639;
+font-size:1.5rem;
+font-weight:bold;`
+const Container = styled.div`
+border:2px solid #2C3639;;
+width:160px;
+height:160px;
+border-radius:50%;
+background:#2C3639;
+box-shadow:1px 1px 6px #2C3639;`
+const FooterLogo=styled.div``
 
 const MaterianUl=styled.div`
 display:flex;
@@ -28,18 +47,33 @@ flex-direction:column;
 gap:3em;
 
 `
+const Logo = styled.h1`
+text-align:center;
+color:#A27B5C;`
+
+const FooterPara = styled.p`
+color:#2C3639;
+font-size:1rem;
+font-weight:bold;`
 
 
 const Footer = () => {
     return (
-    <FooterContainer>
+      <FooterContainer>
+        <Container>
+        <FooterLogo>
+        <Logo className="fontFamily">Book Brush</Logo>
+        </FooterLogo>
+
+       </Container>
       <FooterUl>
         <FooterHeading>
         Menu
         </FooterHeading>
         <FooterList>Home</FooterList>
         <FooterList>Login</FooterList>
-        <FooterList>Preview</FooterList>
+          <FooterList>REgister</FooterList>
+          <FooterList>Preview</FooterList>
       </FooterUl>
 
       <FooterUl>
@@ -57,25 +91,23 @@ const Footer = () => {
 
       <FooterHeading>
         Location
-        </FooterHeading>
-        <FooterList>Nairobi</FooterList>
-        <FooterList>Nakuru </FooterList>
-        <FooterList>Thika</FooterList>
-        <FooterList>Kirinyaga</FooterList>
+          </FooterHeading>
+          <ContactText>
+          {<LocationOnIcon />}Kibera, Nairobi, Kenya
+          </ContactText>
+
       </FooterUl>
      
       <FooterUl>
       <FooterHeading>
-      Contact us through 
-      </FooterHeading>
-      <FooterList>0721346578</FooterList>
-        <FooterList>0798674532</FooterList>
+      Loving Book Brush?
+          </FooterHeading>
+          <FooterPara>You can follow our social here:</FooterPara>
+      <ContactText>{<CallIcon />} Call: 0712345678</ContactText>
+          <ContactText>{<EmailIcon />} Email:bookbrush@gmail.com</ContactText>
+          <ContactText>{<InstagramIcon />}BookBrush</ContactText>
       </FooterUl>
-      <MaterianUl>
-      <FacebookRoundedIcon/>
-      <InstagramIcon/>
-      <SubscriptionsRoundedIcon/>
-      </MaterianUl>
+      
     </FooterContainer>
   
     )
