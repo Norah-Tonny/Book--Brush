@@ -242,7 +242,7 @@ const PreviewItems = () => {
                             <SelectItems onChange={(e) => setChoice({ ...choice, booktitle: e.target.options[e.target.selectedIndex].text })}>
                                 <OptionsItems>Lion In Jungle</OptionsItems>
                                 <OptionsItems>Largest Dragon</OptionsItems>
-                                <OptionsItems>Education the Key</OptionsItems>
+                                <OptionsItems>Education is the Key</OptionsItems>
                                 <OptionsItems>The Sun Rise</OptionsItems>
                             </SelectItems>
                         </InnerContainers>

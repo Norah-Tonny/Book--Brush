@@ -19,7 +19,8 @@ const HomeContainer = styled.div``
 const Home = () => {
 
     return (
-      <HomeContainer>
+      <>
+      
         <Nav />
         <HomeItems />
         <Slider/>
@@ -34,12 +35,12 @@ const Home = () => {
 
         {/* <Login/> */}
         {/* <Register/> */}
+
         <Category /> 
 
         <Footer />
         
-        
-        </HomeContainer>
+        </>
     )
 
 }

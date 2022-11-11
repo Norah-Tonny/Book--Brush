@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useState } from 'react'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { Link } from "react-router-dom";
 import { db } from "../Firebase";
 import { collection, addDoc } from "firebase/firestore";
 
@@ -10,7 +11,7 @@ import { collection, addDoc } from "firebase/firestore";
 const Button = styled.button`
 padding:1em;
 width:10%;
-font-size 1em;
+font-size:1rem;
 background:#A27B5C;
 color:white;
 border-radius:5px;
@@ -38,7 +39,8 @@ font-size:1rem;
 outline:none;
 border:none;
 padding:1em 3em;
-`;
+
+`
 
 const LoginParagraph= styled.p`
 text-align:center;
@@ -57,9 +59,18 @@ const PasswordShower = styled.div``
 const Loginpassword = styled.div`
 `
 const LoginLogo=styled.div`
-color:white;
+color:#A27B5C;
 font-size:3em;
 padding:1.5em;
+`
+
+const RegisterHeading=styled.div`
+color:#A27B5C;
+font-size:1rem;
+`
+const Span=styled.span`
+color:red;
+outline:none;
 `
 
 const LoginItems = () => {
@@ -121,6 +132,8 @@ const LoginItems = () => {
   return (
     <LoginContainer>
       <LoginLogo>Login</LoginLogo>
+      <RegisterHeading>Don't have an account yet? <Span>Sing up.</Span></RegisterHeading>
+
       {values.email == "" && <p style={{color:"red"}}>{error.emailError}</p>}
       <LoginParagraph> Email</LoginParagraph>
       <LoginCheck> 
@@ -131,7 +144,7 @@ const LoginItems = () => {
       <LoginParagraph>Password</LoginParagraph>
       <LoginCheck>
         <Loginpassword>
-          <LoginInput type="text" value={setValues.Password} placeholder="Password" onChange={(e) => {setValues({ ...values, Password: e.target.value }) }} />
+          <LoginInput type={show?"text":"password"} value={setValues.Password} placeholder="Password" onChange={(e) => {setValues({ ...values, Password: e.target.value }) }} />
         </Loginpassword>
         <PasswordShower>
          <ShowPassword onClick={(e) => setShow(prev => !prev)}>{show ? <VisibilityIcon /> : <VisibilityOffIcon />}</ShowPassword>
@@ -141,9 +154,13 @@ const LoginItems = () => {
     <LoginInput type="checkbox"/>Remember me</LoginParagraph>
 
 
+    <Link to="/">  <Button onClick={(e)=>handleChange(e)}>Login</Button> </Link>
+
+
     </LoginContainer>
 
       <Button onClick={(e)=>handleChange(e)}>Submit</Button>
+
    </LoginContainer>
    
 
