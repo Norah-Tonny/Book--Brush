@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { useState } from 'react'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { Password } from "@mui/icons-material";
+import { db } from "../Firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 
 const Button = styled.button`
@@ -48,30 +49,59 @@ display:flex;
 justify-content:center;
 width:30%;
 margin:0 auto;
-
 border-radius:6px;
 align-items:center;
 background:white;
 `;
 const PasswordShower = styled.div``
 const Loginpassword = styled.div`
-
 `
+const LoginLogo=styled.div`
+color:white;
+font-size:3em;
+padding:1.5em;
+`
+
 const LoginItems = () => {
   const [show, setShow] = useState(false)
+
   const [values, setValues] = useState({
-    Email: "",
-    Password: "",
-    Login: "",
+    email: "",
+    password: "",
   })
 
-  const handleEmailInputeChange = (event) => {
-    setValues({ ...values, Email: event.target.values })
-  }
-  const handlePasswordInputChange = (event) => {
-    setValues({ ...values, Password: event.target.values })
+  const [error, setError] = useState({
+    emailError: "",
+    passwordError: ""
+    
+  });
+  console.log(error)
 
+
+ const handleChange = async (e) => {
+    e.preventDefault();
+   try {
+     
+     if(values.email==""){
+       setError(prev=>({...prev, emailError:"Enter your email" }))
+     }
+     if (values.password == "") {
+       setError(prev=>({ ...prev, passwordError: "Enter your password" }));
+    } 
+       
+     else {
+
+    await addDoc(collection(db, "error"), values);
+    setValues({
+    email: "",
+     password: "",
+
+   });
+     console.log(error);
+
+   }
   }
+
 
   const handleLoginInputChange = (event) => {
     setValues({ ...values, Login: event.target.values })
@@ -80,40 +110,44 @@ const LoginItems = () => {
     event.preventDefault();
     if (values.Email && values.Password && values.Login) {
       
+
+    
+   catch (error) {
+     console.log("error fill in the correct information", error);
+
     }
   }
+
   return (
     <LoginContainer>
+      <LoginLogo>Login</LoginLogo>
+      {values.email == "" && <p style={{color:"red"}}>{error.emailError}</p>}
+      <LoginParagraph> Email</LoginParagraph>
+      <LoginCheck> 
+        <LoginInput type="text"  value={setValues.email} placeholder="Email" onChange={(e) =>{ setValues({...values, email:e.target.value})}} />
 
-      <LoginParagraph onSubmit={handleSubmit}> username or Email</LoginParagraph>
-      <LoginCheck>
-        <LoginInput onChange={handleEmailInputeChange}
-          value={values.Email}
-          type="text" placeholder="Email" />
-        
       </LoginCheck>
-
+        {values.email == "" && <p style={{color:"red"}}>{error.passwordError}</p>}
       <LoginParagraph>Password</LoginParagraph>
       <LoginCheck>
         <Loginpassword>
-          <LoginInput onChange={handlePasswordInputChange}
-            value={values.Password}
-            type={show ? "text" : "password"} placeholder="Password" />
+          <LoginInput type="text" value={setValues.Password} placeholder="Password" onChange={(e) => {setValues({ ...values, Password: e.target.value }) }} />
         </Loginpassword>
         <PasswordShower>
-          <ShowPassword onClick={() => setShow(prev => !prev)}>{show ? <VisibilityIcon /> : <VisibilityOffIcon />}</ShowPassword>
+         <ShowPassword onClick={(e) => setShow(prev => !prev)}>{show ? <VisibilityIcon /> : <VisibilityOffIcon />}</ShowPassword>
         </PasswordShower>
       </LoginCheck>
       <LoginParagraph>
-        <input type="checkbox" />
-        Remember me
-      </LoginParagraph>
+    <LoginInput type="checkbox"/>Remember me</LoginParagraph>
 
-
-      <Button onClick={handleSubmit}>Login</Button>
 
     </LoginContainer>
+
+      <Button onClick={(e)=>handleChange(e)}>Submit</Button>
+   </LoginContainer>
+   
+
   )
-}
+ }
 
 export default LoginItems;

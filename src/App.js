@@ -3,7 +3,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Components/Register";
 import Preview from "./Pages/Preview";
-
+import './App.css'
 
 
 
@@ -11,6 +11,7 @@ import Preview from "./Pages/Preview";
 
 const App = () => {
   return (
+
     
     <BrowserRouter>
       <Routes>
