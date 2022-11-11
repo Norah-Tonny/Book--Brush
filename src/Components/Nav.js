@@ -27,34 +27,41 @@ color:#2C3639;
 `
 
 const Logo = styled.h1`
-font-size:3rem;
-color:#2C3639;
+color:#A27B5C;
+padding-left:.3em;
 `;
 
 const NavRight = styled.div``
-const NavLeft=styled.div``
-
+const NavLeft = styled.div``
+const LogoContainer = styled.div`
+border:2px solid #2C3639;;
+width:160px;
+height:160px;
+border-radius:50%;
+background:#2C3639;
+box-shadow:1px 1px 6px #2C3639;
+`
 const Nav = () => {
     return (
         <NavContainer>
             <InnerNav>
                 <NavLeft>
-                <Logo>Book Brush</Logo>
-            </NavLeft>
-            <NavRight>
-            <NavUl>
-                <NavList><Link to="/">Home</Link> </NavList> 
-
+                    <LogoContainer>
+                        <Logo>Book Brush</Logo>
+                    </LogoContainer>
+                </NavLeft>
+                <NavRight>
+                    <NavUl>
+                        <NavList><Link to="/">Home</Link> </NavList>
                         <NavList> <Link to="/login">Login</Link></NavList>
-                        <NavList> <Link to="/register">Register</Link></NavList> 
-
-                <NavList><Link to="/preview">Preview</Link> </NavList> 
-                <NavList> </NavList> 
-                </NavUl>
+                        <NavList> <Link to="/register">Register</Link></NavList>
+                        <NavList><Link to="/preview">Preview</Link> </NavList>
+                        <NavList> </NavList>
+                    </NavUl>
                 </NavRight>
-                </InnerNav>
-    
-       </NavContainer> 
-     )
+            </InnerNav>
+
+        </NavContainer>
+    )
 }
 export default Nav;
