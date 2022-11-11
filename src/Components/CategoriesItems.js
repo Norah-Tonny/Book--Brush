@@ -59,7 +59,8 @@ const CategoriesHeading = styled.h1`
 
 const Container = styled.div`
   background: #2c3639;
-  padding-bottom: 10em;
+  padding-bottom:5em;
+  margin:0;
 `;
 const CategoriesPara = styled.p`
   margin-left: 5em;

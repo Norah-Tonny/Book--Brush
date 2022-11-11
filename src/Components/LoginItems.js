@@ -1,5 +1,4 @@
 
-// import Login from "../Pages/Login";
 import styled from "styled-components";
 import { useState } from 'react'
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -80,7 +79,7 @@ const LoginItems = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (values.Email && values.Password && values.Login) {
-      // setValied(true);
+      
     }
   }
   return (
@@ -113,10 +112,6 @@ const LoginItems = () => {
 
       <Button onClick={handleSubmit}>Login</Button>
 
-      {/* <LoginParagraph>
-      <input type="checkbox" />
-        Forgot Pasword
-        </LoginParagraph> */}
     </LoginContainer>
   )
 }

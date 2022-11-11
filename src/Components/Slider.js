@@ -6,7 +6,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const NavigationArrow = styled.div`
 cursor: pointer;
-background:#A27B5C;
+background:#2C3639;
 border-radius:50%;
 width:40px;
 height:40px;
@@ -15,28 +15,30 @@ justify-content: center;
 align-items:center;
 position:absolute;
 top: 50%; left: ${props => props.direction === "left" ? 1 : 96}%;
-transform: translateY(750%);
+transform: translateY(800%);
 z-index:200 ;`
 
 
 
 const SliderContainer = styled.div`
 display:flex;
-flex-wrap:wrap;
-//  overflow: hidden;
+ overflow: hidden;
 border-radius:10px;
-// background:#2C3639;
 width:70%;
 margin:0 auto;
 
 `;
+const Container = styled.div`
+background:#A27B5C;
+padding:5em;
+`
 
 const SliderItem = styled.div`
-// position:relative;
-width:50%;
+flex-basis:50%;
+flex-shrink:0;
  height:600px;
 transition: all 2s ease-in;
-// background:#2C3639;
+background:#2C3639;
 
 `;
 
@@ -66,7 +68,6 @@ font-size: 2rem;`
 const SliderHeading = styled.h2`
 color: #a27b5c;
   font-size:4rem;
-//   padding:2em;
   font-weight: bold;
 `
 
@@ -91,16 +92,17 @@ const Slider = () => {
   const [activeIndex, setActiveIndex]=useState(0)
   const handleSlide = (side) => {
       if (side === "left") {
-          setActiveIndex(activeIndex>0?activeIndex -1:5)
+          setActiveIndex(activeIndex>0?activeIndex -1:2)
       }
       else {
-      setActiveIndex(activeIndex<5?activeIndex+1:0)
+      setActiveIndex(activeIndex<2?activeIndex+1:0)
       }
 
   }
-  return (
-    
-      <SliderContainer>
+    return (
+      
+    <Container>
+        <SliderContainer>
           <NavigationArrow direction="left" onClick={ ()=>handleSlide ("left")}>
                               <NavigateBeforeIcon />
                           </NavigationArrow>
@@ -110,7 +112,7 @@ const Slider = () => {
           {
               slide.map((slide, index) => {
                   return (
-                      <SliderItem key={index} style={{transform:`translateX(${activeIndex*-100}vw)`}}>
+                      <SliderItem key={index} style={{transform:`translateX(${activeIndex*-100}%)`}}>
                           
                           <ImageContainer>
                               <Image src={slide.img}/>
@@ -123,7 +125,8 @@ const Slider = () => {
                       </SliderItem>)
               })
           }
-      </SliderContainer>
+            </SliderContainer>
+            </Container>
   )
 }
  export default Slider;
